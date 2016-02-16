@@ -11,10 +11,13 @@ Version History:
 
 /*********************************************************************************\
                                   --- Known Bugs ---
-              - Queries work, but database seems to be incomplete, stopped
+            - Queries work, but database seems to be incomplete, stopped
                 after zipcode ~30000.
-              - Demographics data doesn't have decimals, either a query issue or 
-                a database issue
+            - Demographics data doesn't have decimals, either a query issue or 
+                a database issue.
+            - States are currently hardcoded because local database is incomplete
+                for some reason, doesn't affect program currently, but will need
+                to be changed once database is fixed.
 \*********************************************************************************/
 
 using System;
@@ -210,6 +213,8 @@ namespace Business_Analyst
 
         private void fillStates()
         {
+            // NOTE: Currently hard coding states because local database is currently incomplete for some reason, does not create any errors if selected state is not present in database
+
             string[] states = new string[50] {"Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas",
                     "Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico",
                     "New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas ","Utah ","Vermont",

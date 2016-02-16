@@ -11,10 +11,13 @@ Version History:
 
 /*********************************************************************************\
                                   --- Known Bugs ---
-              - Queries work, but database seems to be incomplete, stopped
+            - Queries work, but database seems to be incomplete, stopped
                 after zipcode ~30000.
-              - Demographics data doesn't have decimals, either a query issue or 
-                a database issue
+            - Demographics data doesn't have decimals, either a query issue or 
+                a database issue.
+            - States are currently hardcoded because local database is incomplete
+                for some reason, doesn't affect program currently, but will need
+                to be changed once database is fixed.
 \*********************************************************************************/
 
 using System;
