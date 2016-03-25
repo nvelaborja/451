@@ -1,0 +1,45 @@
+# Table Sizes for DataBase Project MileStone 2
+# Nathan VelaBorja & Jacob Krahling
+# March 22, 2016
+# CptS 451 Spring 2016
+
+mysql> select count(*) from Demographics;
++----------+
+| count(*) |
++----------+
+|    32301 |
++----------+
+1 row in set (0.08 sec)
+
+mysql> select count(*) from businesses;
++----------+
+| count(*) |
++----------+
+|     9334 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> select count(*) from Categories;
++----------+
+| count(*) |
++----------+
+|    17188 |
++----------+
+1 row in set (0.03 sec)
+
+
+mysql> select count(*) from Users;
++----------+
+| count(*) |
++----------+
+|   203005 |
++----------+
+1 row in set (0.42 sec)
+
+mysql> select count(*) from reviews;
++----------+
+| count(*) |
++----------+
+|   572518 |
++----------+
+1 row in set (5.23 sec)

@@ -10,7 +10,7 @@ namespace parse_yelp
     class Parser
     {
         //initialize the input/output data directory. Currently set to execution folder. 
-        public static String dataDir = "C:\\Users\\Jacob\\Desktop\\databaseproject\\";
+        public static String dataDir = "C:\\Users\\Nathan\\Desktop\\451 Data\\";
         static void Main(string[] args)
         {
             JSONParser my_parser =  new JSONParser();

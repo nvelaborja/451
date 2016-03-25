@@ -53,7 +53,7 @@ namespace parse_yelp
                                 outputfile.WriteLine(json2db.ProcessUsers(my_jsonStr));
                                 break;
                         case "\"business\"":
-                                outputfile.WriteLine(json2db.ProcessBusiness(my_jsonStr));                              
+                                    outputfile.WriteLine(json2db.ProcessBusiness(my_jsonStr));                              
                                 break;
                         default: Console.WriteLine("Unknown type : " + type);
                             break;

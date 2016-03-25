@@ -18,6 +18,7 @@ Version History:
             - States are currently hardcoded because local database is incomplete
                 for some reason, doesn't affect program currently, but will need
                 to be changed once database is fixed.
+            - Multiple selections in the categories box don't work
 \*********************************************************************************/
 
 using System;
@@ -51,6 +52,17 @@ namespace Business_Analyst
             fillStates();                           // Fill state drop box
 
             dataBase = new MySQLConnection();       // Create database connection
+
+            // Populate Categories List
+            string qStr = "SELECT name FROM Categories";
+            List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
+            qResults = dataBase.SQLSELECTExec(qStr, "name");
+            qResults.Sort();                                            // Sort query list
+            qResults = qResults.Distinct().ToList();
+            foreach(string item in qResults)
+            {
+                listBoxCategory.Items.Add(item);
+            }
         }
 
         #endregion
@@ -97,7 +109,7 @@ namespace Business_Analyst
             listBoxZip.Items.Clear();
 
             // City Query, will populate city box
-            string qStr = "SELECT distinct city FROM CensusData WHERE state='" + boxState.SelectedItem.ToString() + "' ORDER BY city;";
+            string qStr = "SELECT distinct city FROM Demographics WHERE state='" + boxState.SelectedItem.ToString() + "' ORDER BY city;";
 
             List<string> qResults = dataBase.SQLSELECTExec(qStr, "city");
 
@@ -107,7 +119,7 @@ namespace Business_Analyst
             }
 
             // Zip Query for whole state, will be refined later
-            qStr = "SELECT zipcode FROM CensusData WHERE state='" + boxState.SelectedItem.ToString() + "' ORDER BY zipcode;";
+            qStr = "SELECT zipcode FROM Demographics WHERE state='" + boxState.SelectedItem.ToString() + "' ORDER BY zipcode;";
 
             qResults = dataBase.SQLSELECTExec(qStr, "zipcode");
 
@@ -133,7 +145,7 @@ namespace Business_Analyst
             // Refine zipcodes based on selected city
             listBoxZip.Items.Clear();
 
-            string qStr = "SELECT zipcode FROM CensusData WHERE state='" + boxState.SelectedItem.ToString() + "' AND city='" + listBoxCity.SelectedItem.ToString() + "' ORDER BY zipcode;";
+            string qStr = "SELECT zipcode FROM Demographics WHERE state='" + boxState.SelectedItem.ToString() + "' AND city='" + listBoxCity.SelectedItem.ToString() + "' ORDER BY zipcode;";
 
             List<string> qResults = new List<string>();
             qResults = dataBase.SQLSELECTExec(qStr, "zipcode");
@@ -159,50 +171,50 @@ namespace Business_Analyst
             textBoxAge.Clear();
 
             // Next make all the queries based on selected zipcode
-            string qStr = "SELECT population FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            string qStr = "SELECT population FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
             qResults = dataBase.SQLSELECTExec(qStr, "population");
             textBoxPop.Text = qResults[0];                              // Zipcodes are unique, so we know there will only be one item from queryj
 
-            qStr = "SELECT avg_income FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT avg_income FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
             qResults = dataBase.SQLSELECTExec(qStr, "avg_income");
             textBoxIncome.Text = qResults[0];
 
-            qStr = "SELECT Under18years FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT under18 FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "Under18years");
+            qResults = dataBase.SQLSELECTExec(qStr, "under18");
             textBox18.Text = qResults[0];
 
-            qStr = "SELECT 18_to_24years FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT 18to24 FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "18_to_24years");
+            qResults = dataBase.SQLSELECTExec(qStr, "18to24");
             textBox24.Text = qResults[0];
 
-            qStr = "SELECT 25_to_44years FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT 25to44 FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "25_to_44years");
+            qResults = dataBase.SQLSELECTExec(qStr, "25to44");
             textBox44.Text = qResults[0];
 
-            qStr = "SELECT 45_to_64years FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT 45to64 FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "45_to_64years");
+            qResults = dataBase.SQLSELECTExec(qStr, "45to64");
             textBox64.Text = qResults[0];
 
-            qStr = "SELECT 65_and_over FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT 65andover FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "65_and_over");
+            qResults = dataBase.SQLSELECTExec(qStr, "65andover");
             textBox65.Text = qResults[0];
 
-            qStr = "SELECT Median_age FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT med_age FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "Median_age");
+            qResults = dataBase.SQLSELECTExec(qStr, "med_age");
             textBoxAge.Text = qResults[0];
 
             /* Percentage of women?
-            qStr = "SELECT Under18years FROM CensusData WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
+            qStr = "SELECT under18 FROM Demographics WHERE zipcode='" + listBoxZip.SelectedItem.ToString() + "'";
             qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(qStr, "Under18years");
+            qResults = dataBase.SQLSELECTExec(qStr, "under18");
             textBoxPop.Text = qResults[0];
             */
         }
@@ -228,5 +240,42 @@ namespace Business_Analyst
         }
 
         #endregion
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+            if (!listBoxSelectedCategories.Items.Contains(listBoxCategory.SelectedItem))
+            {
+                listBoxSelectedCategories.Items.Add(listBoxCategory.SelectedItem);
+                businessSearch();
+            }
+        }
+
+        private void buttonRemoveCategory_Click(object sender, EventArgs e)
+        {
+            listBoxSelectedCategories.Items.Remove(listBoxSelectedCategories.SelectedItem);
+            businessSearch();
+        }
+
+        private void listBoxSearchResults_SelectedValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void businessSearch()
+        {
+            listBoxSearchResults.Items.Clear();
+
+            string qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid =  C.bid AND ";
+            for (int i = 0; i < listBoxSelectedCategories.Items.Count; i++)
+            {
+                qStr += " C.name = '" + listBoxSelectedCategories.Items[i];
+                if (i + 1 == listBoxSelectedCategories.Items.Count) qStr += "' ORDER BY C.bid;";
+                else qStr += "' AND ";
+            }
+            List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
+            qResults = dataBase.SQLSELECTExec(qStr, "name");
+
+            listBoxSearchResults.Items.AddRange(qResults.ToArray());
+        }
     }
 }

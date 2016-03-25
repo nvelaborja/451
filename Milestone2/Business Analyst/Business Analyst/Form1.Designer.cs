@@ -57,10 +57,31 @@
             this.textBoxPop = new System.Windows.Forms.TextBox();
             this.labelIncome = new System.Windows.Forms.Label();
             this.labelPop = new System.Windows.Forms.Label();
+            this.middleDivider = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonAddCategory = new System.Windows.Forms.Button();
+            this.listBoxCategory = new System.Windows.Forms.ListBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.listBoxAttributes = new System.Windows.Forms.ListBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxState = new System.Windows.Forms.TextBox();
+            this.textBoxZip = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.buttonRemoveCategory = new System.Windows.Forms.Button();
+            this.listBoxSelectedCategories = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -84,7 +105,7 @@
             // listBoxZip
             // 
             this.listBoxZip.BackColor = System.Drawing.SystemColors.InfoText;
-            this.listBoxZip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBoxZip.Cursor = System.Windows.Forms.Cursors.Default;
             this.listBoxZip.ForeColor = System.Drawing.SystemColors.Control;
             this.listBoxZip.FormattingEnabled = true;
             this.listBoxZip.Location = new System.Drawing.Point(96, 354);
@@ -98,7 +119,7 @@
             // listBoxCity
             // 
             this.listBoxCity.BackColor = System.Drawing.SystemColors.InfoText;
-            this.listBoxCity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBoxCity.Cursor = System.Windows.Forms.Cursors.Default;
             this.listBoxCity.ForeColor = System.Drawing.SystemColors.Control;
             this.listBoxCity.FormattingEnabled = true;
             this.listBoxCity.Location = new System.Drawing.Point(96, 84);
@@ -396,6 +417,206 @@
             this.labelPop.TabIndex = 0;
             this.labelPop.Text = "Population";
             // 
+            // middleDivider
+            // 
+            this.middleDivider.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.middleDivider.Location = new System.Drawing.Point(710, -10);
+            this.middleDivider.Name = "middleDivider";
+            this.middleDivider.Size = new System.Drawing.Size(20, 460);
+            this.middleDivider.TabIndex = 2;
+            this.middleDivider.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.buttonAddCategory);
+            this.groupBox5.Controls.Add(this.listBoxCategory);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox5.Location = new System.Drawing.Point(749, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(215, 280);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Select Business Category";
+            // 
+            // buttonAddCategory
+            // 
+            this.buttonAddCategory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddCategory.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddCategory.Location = new System.Drawing.Point(18, 241);
+            this.buttonAddCategory.Name = "buttonAddCategory";
+            this.buttonAddCategory.Size = new System.Drawing.Size(180, 28);
+            this.buttonAddCategory.TabIndex = 1;
+            this.buttonAddCategory.Text = "Add";
+            this.buttonAddCategory.UseVisualStyleBackColor = false;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
+            // 
+            // listBoxCategory
+            // 
+            this.listBoxCategory.BackColor = System.Drawing.SystemColors.InfoText;
+            this.listBoxCategory.ForeColor = System.Drawing.SystemColors.Control;
+            this.listBoxCategory.FormattingEnabled = true;
+            this.listBoxCategory.Location = new System.Drawing.Point(7, 19);
+            this.listBoxCategory.Name = "listBoxCategory";
+            this.listBoxCategory.ScrollAlwaysVisible = true;
+            this.listBoxCategory.Size = new System.Drawing.Size(202, 212);
+            this.listBoxCategory.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.Controls.Add(this.listBoxAttributes);
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox6.Location = new System.Drawing.Point(970, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(215, 417);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Select Business Attribute";
+            // 
+            // listBoxAttributes
+            // 
+            this.listBoxAttributes.BackColor = System.Drawing.SystemColors.InfoText;
+            this.listBoxAttributes.ForeColor = System.Drawing.SystemColors.Control;
+            this.listBoxAttributes.FormattingEnabled = true;
+            this.listBoxAttributes.Location = new System.Drawing.Point(7, 23);
+            this.listBoxAttributes.Name = "listBoxAttributes";
+            this.listBoxAttributes.ScrollAlwaysVisible = true;
+            this.listBoxAttributes.Size = new System.Drawing.Size(202, 381);
+            this.listBoxAttributes.TabIndex = 0;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Controls.Add(this.listBoxSearchResults);
+            this.groupBox7.Controls.Add(this.label2);
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.textBoxCity);
+            this.groupBox7.Controls.Add(this.textBoxState);
+            this.groupBox7.Controls.Add(this.textBoxZip);
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox7.Location = new System.Drawing.Point(1191, 12);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(215, 417);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Search Results";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 385);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Zipcode";
+            // 
+            // listBoxSearchResults
+            // 
+            this.listBoxSearchResults.BackColor = System.Drawing.SystemColors.InfoText;
+            this.listBoxSearchResults.ForeColor = System.Drawing.SystemColors.Control;
+            this.listBoxSearchResults.FormattingEnabled = true;
+            this.listBoxSearchResults.Location = new System.Drawing.Point(7, 20);
+            this.listBoxSearchResults.Name = "listBoxSearchResults";
+            this.listBoxSearchResults.ScrollAlwaysVisible = true;
+            this.listBoxSearchResults.Size = new System.Drawing.Size(202, 290);
+            this.listBoxSearchResults.TabIndex = 0;
+            this.listBoxSearchResults.SelectedValueChanged += new System.EventHandler(this.listBoxSearchResults_SelectedValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 354);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "State";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "City";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBoxCity
+            // 
+            this.textBoxCity.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBoxCity.Location = new System.Drawing.Point(75, 320);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.ReadOnly = true;
+            this.textBoxCity.Size = new System.Drawing.Size(130, 20);
+            this.textBoxCity.TabIndex = 14;
+            this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxState
+            // 
+            this.textBoxState.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxState.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBoxState.Location = new System.Drawing.Point(75, 351);
+            this.textBoxState.Name = "textBoxState";
+            this.textBoxState.ReadOnly = true;
+            this.textBoxState.Size = new System.Drawing.Size(130, 20);
+            this.textBoxState.TabIndex = 16;
+            this.textBoxState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxZip
+            // 
+            this.textBoxZip.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxZip.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBoxZip.Location = new System.Drawing.Point(75, 382);
+            this.textBoxZip.Name = "textBoxZip";
+            this.textBoxZip.ReadOnly = true;
+            this.textBoxZip.Size = new System.Drawing.Size(130, 20);
+            this.textBoxZip.TabIndex = 15;
+            this.textBoxZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox8.Controls.Add(this.buttonRemoveCategory);
+            this.groupBox8.Controls.Add(this.listBoxSelectedCategories);
+            this.groupBox8.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox8.Location = new System.Drawing.Point(749, 299);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(215, 130);
+            this.groupBox8.TabIndex = 5;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Selected Categories";
+            // 
+            // buttonRemoveCategory
+            // 
+            this.buttonRemoveCategory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonRemoveCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveCategory.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonRemoveCategory.Location = new System.Drawing.Point(18, 94);
+            this.buttonRemoveCategory.Name = "buttonRemoveCategory";
+            this.buttonRemoveCategory.Size = new System.Drawing.Size(180, 28);
+            this.buttonRemoveCategory.TabIndex = 2;
+            this.buttonRemoveCategory.Text = "Remove";
+            this.buttonRemoveCategory.UseVisualStyleBackColor = false;
+            this.buttonRemoveCategory.Click += new System.EventHandler(this.buttonRemoveCategory_Click);
+            // 
+            // listBoxSelectedCategories
+            // 
+            this.listBoxSelectedCategories.BackColor = System.Drawing.SystemColors.InfoText;
+            this.listBoxSelectedCategories.ForeColor = System.Drawing.SystemColors.Control;
+            this.listBoxSelectedCategories.FormattingEnabled = true;
+            this.listBoxSelectedCategories.Location = new System.Drawing.Point(6, 19);
+            this.listBoxSelectedCategories.Name = "listBoxSelectedCategories";
+            this.listBoxSelectedCategories.ScrollAlwaysVisible = true;
+            this.listBoxSelectedCategories.Size = new System.Drawing.Size(202, 69);
+            this.listBoxSelectedCategories.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,12 +624,17 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(704, 441);
+            this.ClientSize = new System.Drawing.Size(1424, 441);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.middleDivider);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(720, 480);
-            this.MinimumSize = new System.Drawing.Size(720, 480);
+            this.MaximumSize = new System.Drawing.Size(1440, 480);
+            this.MinimumSize = new System.Drawing.Size(1440, 480);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -420,6 +646,11 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -454,6 +685,23 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.Label labelPercent;
         private System.Windows.Forms.Label labelAge;
+        private System.Windows.Forms.GroupBox middleDivider;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ListBox listBoxCategory;
+        private System.Windows.Forms.Button buttonAddCategory;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.ListBox listBoxSelectedCategories;
+        private System.Windows.Forms.Button buttonRemoveCategory;
+        private System.Windows.Forms.ListBox listBoxAttributes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBoxSearchResults;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBoxState;
+        private System.Windows.Forms.TextBox textBoxZip;
     }
 }
 

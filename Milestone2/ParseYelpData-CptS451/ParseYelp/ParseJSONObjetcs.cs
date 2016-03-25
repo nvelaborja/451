@@ -11,6 +11,7 @@ namespace parse_yelp
     class ParseJSONObjects
     {              
         Categories category;
+        List<string> attributeList = new List<string>();
 
         public ParseJSONObjects( )
         {
@@ -43,12 +44,12 @@ namespace parse_yelp
         /* Extract business information*/
         public StringBuilder rProcess(JsonObject o, StringBuilder sb)
         {
+            int a;
             string[] k = o.Keys.ToArray<string>();
             JsonValue[] v = o.Values.ToArray();
             string temp;
             for (int i = 0; i < k.Length; i++)
             {
-                sb.Append(cleanTextforSQL(k[i].ToString()) + ": ");
                 temp = cleanTextforSQL( v[i].ToString());
                 if (temp.StartsWith("{"))
                 {
@@ -56,7 +57,16 @@ namespace parse_yelp
                 }
                 else
                 {
-                    sb.Append(temp + "\r\n");
+                    if (temp == "true")
+                    { sb.Append("1, "); }
+                    else if (temp == "false")
+                    { sb.Append("0, "); }
+                    else if (int.TryParse(temp, out a))
+                    {
+                        sb.Append(temp + ", ");
+                    }
+                    else
+                    { sb.Append("\"" + temp.ToString() + "\", "); }
                 }
             }
             return sb;
@@ -73,37 +83,83 @@ namespace parse_yelp
             int j;
             //attributes and hours are nested
             //categories and neighborhood are lists
-            for (int i = 0; i < keyArray.Count(); i++)
+            string bid = v[0].ToString();
+            string zip = "";
+            string address = cleanTextforSQL( v[1].ToString());
+            //CREATE ZIP CODE
+            for (int x = address.Length - 5; x < address.Length; x++)
             {
-                //Console.Write(sb.ToString());
-                if (i == 13)
-                { 
-                    //recursion
-                    sb.Append(keyArray[i] + ": " + "\r\n");
-                    sb = rProcess((JsonObject)v[i], sb);
-                 
-                }
-                else if (i == 2 || i == 8)
-                { 
-                    //do nothing
-                }
-                else if (i == 4)
+                zip += address[x];
+            }
+            char[] trim = { ' ' };
+            zip = zip.TrimStart(trim);
+            int open = 0;
+            if (v[3].ToString() == "true")
+            {
+                open = 1;
+            }
+            //CREATE INSERT STATEMENTS FOR BUSINESS (bid, name, city, state_code, zip)
+            sb.Append("insert into businesses (bid, name, city, state_code, zipcode, open) values (" + v[0].ToString() + ", " + v[7].ToString() + ", ");
+            sb.Append(v[5].ToString() + ", " + v[10].ToString() + ", " + zip + ", " + open +");\r\n");
+            //CREATE insert statements for categories (name, bid)
+            if (v[4].ToArray().Count() > 0)
+            {
+                
+                for (j = 0; j < v[4].ToArray().Length - 1; j++)
                 {
-                    //list
-                    sb.Append(keyArray[i] + ": " + "\r\n");
-                    for (j = 0; j < v[i].ToArray().Length - 1; j++)
-                    {
-                        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
-                    }
-                    if (v[i].ToArray().Count() > 0)
-                        sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n");
-                }
-                else
-                {
-                    sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
+                    sb.Append("insert into categories (name, bid) values (\"");
+                    sb.Append(cleanTextforSQL(v[4][j].ToString()) + "\", " + bid + ");\r\n");
                 }
             }
-            //Console.WriteLine(sb.ToString());
+            //CREATE insert statements for attributes (bid, ....)
+            sb.Append("insert into attributes (bid, takeout, drivethru, dessert, latenight, lunch, dinner, brunch, breakfast, caters, noise_level, " +
+                "takes_reservations, delivery, romantic, intimate, classy, hipster, divey, touristy, trendy, upscale, casual, garage, street, "+ 
+                "validated, lot, valet, has_tv, outdoor_seating, attire, alchohol, waiter_service, accept_credit, good_for_kids, good_for_groups, price_range)"
+                + " values (");
+            sb = rProcess((JsonObject)v[13], sb);
+            string s = sb.ToString();
+            char[] charsToTrim = { ',', ' ' };
+            s = s.TrimEnd(charsToTrim);
+            s += ");\r\n";
+            //for (int i = 0; i < keyArray.Count(); i++)
+            //{
+            //    //Console.Write(sb.ToString());
+            //    //if (i == )
+            //    //{ 
+            //        //recursion
+            //        //sb.Append(keyArray[i] + ": " + "\r\n");
+            //        //sb = rProcess((JsonObject)v[i], sb);
+                 
+            //    //}
+            //    else if (i == 
+            //    else if (i == 2 || i == 8)
+            //    { 
+            //        //do nothing
+            //    }
+            //    else if (i == 4)
+            //    {
+                    
+            //        for (j = 0; j < v[4].ToArray().Length - 1; j++)
+            //        {
+            //            sb.Append("insert into categories (name, bid) values (");
+            //            sb.Append(cleanTextforSQL(v[4][j].ToString()) + ", " + bid + ");");
+            //        }
+            //    //    //list
+            //    //    sb.Append(keyArray[i] + ": " + "\r\n");
+            //    //    for (j = 0; j < v[i].ToArray().Length - 1; j++)
+            //    //    {
+            //    //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
+            //    //    }
+            //        if (v[i].ToArray().Count() > 0)
+            //        { sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n"); }
+
+            //    }
+            //    //else
+            //    //{
+            //    //    sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
+            //    //}
+            //}
+            //Console.WriteLine(s);
 
             //String business_id = my_jsonStr["business_id"].ToString();
             //sb.Append("business_id:  " + cleanTextforSQL(business_id) + "\r\n");
@@ -126,7 +182,7 @@ namespace parse_yelp
              
 
             //Clean text and remove any characters that might cause errors in MySQL.
-            return (sb.ToString());
+            return s;
         }
 
 
@@ -141,47 +197,59 @@ namespace parse_yelp
             //int j;
             //attributes and hours are nested
             //categories and neighborhood are lists
-            for (int i = 0; i < keyArray.Count(); i++)
-            {
-                //Console.Write(sb.ToString());
-                if (i == 0)
-                {
-                    //recursion
-                    sb.Append(keyArray[i] + ": " + "\r\n");
-                    sb = rProcess((JsonObject)v[i], sb);
+            //Console.WriteLine("about to do stuff");
+            //string funny = "0", useful = "0", cool = "0";
+            
+            sb.Append("insert into reviews (rid, uid, bid, stars, funny, useful, cool, date, text) values "
+                + "(" + v[2].ToString() + ", " + v[1].ToString() + ", " + v[7].ToString() + ", " + v[3].ToString() + ", ");
+            //    + v[0][0].ToString() + ", " + v[0][1].ToString() + ", " + v[0][2].ToString() + ", " + 
+            sb = rProcess((JsonObject)v[0], sb);
+            string output = sb.ToString();
+            char[] trimchars = {' ', ','};
+            output.TrimEnd(trimchars);
+            output += v[4].ToString() + ", \"" + TruncateReviewText(cleanTextforSQL(v[5].ToString()));
+            output +="\");\r\n";
+            //for (int i = 0; i < keyArray.Count(); i++)
+            //{
+            //    //Console.Write(sb.ToString());
+            //    if (i == 0)
+            //    {
+            //        //recursion
+            //        sb.Append(keyArray[i] + ": " + "\r\n");
+            //        sb = rProcess((JsonObject)v[i], sb);
                     
-                }
-                //no lists
-                //else if (i == 4 || i == 8)
-                //{
-                //    //list
-                //    sb.Append(keyArray[i] + ": " + "\r\n");
-                //    for (j = 0; j < v[i].ToArray().Length - 1; j++)
-                //    {
-                //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
-                //    }
-                //    if (v[i].ToArray().Count() > 0)
-                //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n");
-                //}
-                else if (i == 5)
-                {
-                    sb.Append(keyArray[i] + ": " + TruncateReviewText(cleanTextforSQL(v[i].ToString())) + "\r\n");
-                }
-                else
-                {
-                    sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
-                }
-            }
-            //Console.WriteLine(sb.ToString());
+            //    }
+            //    //no lists
+            //    //else if (i == 4 || i == 8)
+            //    //{
+            //    //    //list
+            //    //    sb.Append(keyArray[i] + ": " + "\r\n");
+            //    //    for (j = 0; j < v[i].ToArray().Length - 1; j++)
+            //    //    {
+            //    //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
+            //    //    }
+            //    //    if (v[i].ToArray().Count() > 0)
+            //    //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n");
+            //    //}
+            //    else if (i == 5)
+            //    {
+            //        sb.Append(keyArray[i] + ": " + TruncateReviewText(cleanTextforSQL(v[i].ToString())) + "\r\n");
+            //    }
+            //    else
+            //    {
+            //        sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
+            //    }
+            //}
+            ////Console.WriteLine(sb.ToString());
 
 
-            ////Example: extract business_id and reviewtext
-            //String review_id = cleanTextforSQL(my_jsonStr["review_id"].ToString());
-            ////You may limit the text lenght for review text 
-            //String reviewtext = TruncateReviewText(cleanTextforSQL(my_jsonStr["text"].ToString()));
+            //////Example: extract business_id and reviewtext
+            ////String review_id = cleanTextforSQL(my_jsonStr["review_id"].ToString());
+            //////You may limit the text lenght for review text 
+            ////String reviewtext = TruncateReviewText(cleanTextforSQL(my_jsonStr["text"].ToString()));
 
-            /* EXTRACT OTHER KEY VALUES */
-            return (sb.ToString());
+            ///* EXTRACT OTHER KEY VALUES */
+            return output;
 
         }
 
@@ -196,39 +264,40 @@ namespace parse_yelp
             //int j;
             //attributes and hours are nested
             //categories and neighborhood are lists
-            for (int i = 0; i < keyArray.Count(); i++)
-            {
-                //Console.Write(sb.ToString());
-                if (i == 1)
-                {
-                    //recursion
-                    sb.Append(keyArray[i] + ": " + "\r\n");
-                    sb = rProcess((JsonObject)v[i], sb);
+            sb.Append("insert into users (uid, name) values (\"" + cleanTextforSQL(v[4].ToString()) +"\", \"" + cleanTextforSQL(v[3].ToString())+ "\");\r\n");
+            //for (int i = 0; i < keyArray.Count(); i++)
+            //{
+            //    //Console.Write(sb.ToString());
+            //    if (i == 1)
+            //    {
+            //        //recursion
+            //        sb.Append(keyArray[i] + ": " + "\r\n");
+            //        sb = rProcess((JsonObject)v[i], sb);
                     
-                }
-                else if (i == 5 || i == 9 || i == 10)
-                { 
-                    //do nothing
-                }
-                //else if (i == 5)
-                //{
-                //    //list
-                //    sb.Append(keyArray[i] + ": " + "\r\n");
-                //    for (j = 0; j < v[i].ToArray().Length - 1; j++)
-                //    {
-                //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
-                //    }
-                //    if (v[i].ToArray().Count() > 0)
-                //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n");
-                //}
-                else
-                {
-                    sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
-                }
-            }
-            //Console.WriteLine(sb.ToString());
-            //Example: extract user_id
-            //String user_id = cleanTextforSQL(my_jsonStr[my_jsonStr.Keys.ToArray()[4]].ToString());
+            //    }
+            //    else if (i == 5 || i == 9 || i == 10)
+            //    { 
+            //        //do nothing
+            //    }
+            //    //else if (i == 5)
+            //    //{
+            //    //    //list
+            //    //    sb.Append(keyArray[i] + ": " + "\r\n");
+            //    //    for (j = 0; j < v[i].ToArray().Length - 1; j++)
+            //    //    {
+            //    //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + ", ");
+            //    //    }
+            //    //    if (v[i].ToArray().Count() > 0)
+            //    //        sb.Append(cleanTextforSQL(v[i][j].ToString()) + "\r\n");
+            //    //}
+            //    else
+            //    {
+            //        sb.Append(keyArray[i] + ": " + cleanTextforSQL(v[i].ToString()) + "\r\n");
+            //    }
+            //}
+            ////Console.WriteLine(sb.ToString());
+            ////Example: extract user_id
+            ////String user_id = cleanTextforSQL(my_jsonStr[my_jsonStr.Keys.ToArray()[4]].ToString());
             
 
             ///* EXTRACT OTHER KEY VALUES */
