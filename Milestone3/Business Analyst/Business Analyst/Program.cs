@@ -7,17 +7,21 @@ Description: This program makes use of a locally-stored mySQL database and uses 
 Version History:
     0.1     Feb. 15, 2016 - Created base winform and database
     0.2     Feb. 16, 2016 - Added queries, works well
+    0.3     Apr. 13, 2016 - Updated Form for milestone 3 features. 
 \*********************************************************************************/
 
 /*********************************************************************************\
                                   --- Known Bugs ---
-            - Queries work, but database seems to be incomplete, stopped
-                after zipcode ~30000.
             - Demographics data doesn't have decimals, either a query issue or 
                 a database issue.
             - States are currently hardcoded because local database is incomplete
                 for some reason, doesn't affect program currently, but will need
                 to be changed once database is fixed.
+            - Multiple selections in the categories box don't work
+            - Apostrophes in queries are mucking things up
+            - Add two categories, then remove one. Should do new search but doesn't
+            - Need to fix population format function (not a big deal)
+            - Category queries not currently working
 \*********************************************************************************/
 
 using System;

@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBoxZip = new System.Windows.Forms.ListBox();
-            this.listBoxCity = new System.Windows.Forms.ListBox();
-            this.boxState = new System.Windows.Forms.ComboBox();
+            this.listBoxZipDem = new System.Windows.Forms.ListBox();
+            this.listBoxCityDem = new System.Windows.Forms.ListBox();
+            this.boxStateDem = new System.Windows.Forms.ComboBox();
             this.labelZip = new System.Windows.Forms.Label();
             this.labelCity = new System.Windows.Forms.Label();
             this.labelState = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.buttonAddCategory = new System.Windows.Forms.Button();
-            this.listBoxCategory = new System.Windows.Forms.ListBox();
+            this.buttonAddCategoryDem = new System.Windows.Forms.Button();
+            this.listBoxCategoryDem = new System.Windows.Forms.ListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxSearchResults = new System.Windows.Forms.ListBox();
+            this.listBoxSearchResultsZip = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.textBoxState = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
+            this.textBoxRatingZip = new System.Windows.Forms.TextBox();
+            this.textBoxReviewsZip = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.buttonRemoveCategory = new System.Windows.Forms.Button();
-            this.listBoxSelectedCategories = new System.Windows.Forms.ListBox();
+            this.buttonRemoveCategoryDem = new System.Windows.Forms.Button();
+            this.listBoxSelectedCategoriesDem = new System.Windows.Forms.ListBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -58,18 +58,18 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox24State = new System.Windows.Forms.TextBox();
+            this.textBox44State = new System.Windows.Forms.TextBox();
+            this.textBox65State = new System.Windows.Forms.TextBox();
+            this.textBox64State = new System.Windows.Forms.TextBox();
+            this.textBox18State = new System.Windows.Forms.TextBox();
             this.labelPercent = new System.Windows.Forms.Label();
             this.labelAge = new System.Windows.Forms.Label();
-            this.textBoxAge = new System.Windows.Forms.TextBox();
+            this.textBoxAgeState = new System.Windows.Forms.TextBox();
             this.labelMedAge = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxIncome = new System.Windows.Forms.TextBox();
-            this.textBoxPop = new System.Windows.Forms.TextBox();
+            this.textBoxIncomeState = new System.Windows.Forms.TextBox();
+            this.textBoxPopState = new System.Windows.Forms.TextBox();
             this.labelIncome = new System.Windows.Forms.Label();
             this.labelPop = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -80,18 +80,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox24City = new System.Windows.Forms.TextBox();
+            this.textBox44City = new System.Windows.Forms.TextBox();
+            this.textBox65City = new System.Windows.Forms.TextBox();
+            this.textBox64City = new System.Windows.Forms.TextBox();
+            this.textBox18City = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxAgeCity = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxIncomeCity = new System.Windows.Forms.TextBox();
+            this.textBoxPopCity = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -102,81 +102,81 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox24Zip = new System.Windows.Forms.TextBox();
+            this.textBox44Zip = new System.Windows.Forms.TextBox();
+            this.textBox65Zip = new System.Windows.Forms.TextBox();
+            this.textBox64Zip = new System.Windows.Forms.TextBox();
+            this.textBox18Zip = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBoxAgeZip = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBoxIncomeZip = new System.Windows.Forms.TextBox();
+            this.textBoxPopZip = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxSearchResultsCity = new System.Windows.Forms.ListBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxRatingCity = new System.Windows.Forms.TextBox();
+            this.textBoxReviewsCity = new System.Windows.Forms.TextBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBoxSearchResultsState = new System.Windows.Forms.ListBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBoxState = new System.Windows.Forms.TextBox();
+            this.textBoxRatingState = new System.Windows.Forms.TextBox();
+            this.textBoxReviewsState = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox27 = new System.Windows.Forms.GroupBox();
-            this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox28 = new System.Windows.Forms.GroupBox();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox29 = new System.Windows.Forms.GroupBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.resultsGrid = new System.Windows.Forms.DataGridView();
             this.BusinessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Zipcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumReviews = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.numericMaxReviews = new System.Windows.Forms.NumericUpDown();
+            this.numericMinReviews = new System.Windows.Forms.NumericUpDown();
+            this.numericMaxRating = new System.Windows.Forms.NumericUpDown();
+            this.numericMinRating = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox28 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBoxSelectedAttributes = new System.Windows.Forms.ListBox();
+            this.groupBox27 = new System.Windows.Forms.GroupBox();
+            this.buttonAddAttribute = new System.Windows.Forms.Button();
+            this.boxValue = new System.Windows.Forms.ComboBox();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.listBoxAttributes = new System.Windows.Forms.ListBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.listBoxZipSearch = new System.Windows.Forms.ListBox();
+            this.listBoxCitySearch = new System.Windows.Forms.ListBox();
+            this.boxStateSearch = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.buttonAddSearch = new System.Windows.Forms.Button();
+            this.listBoxCategorySearch = new System.Windows.Forms.ListBox();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.buttonRemoveSearch = new System.Windows.Forms.Button();
+            this.listBoxSelectedCategoriesSearch = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -201,32 +201,33 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).BeginInit();
+            this.groupBox29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxReviews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMinReviews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxRating)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMinRating)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.groupBox28.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.groupBox25.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.groupBox24.SuspendLayout();
             this.groupBox26.SuspendLayout();
-            this.groupBox28.SuspendLayout();
-            this.groupBox29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            this.groupBox30.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Controls.Add(this.listBoxZip);
-            this.groupBox1.Controls.Add(this.listBoxCity);
-            this.groupBox1.Controls.Add(this.boxState);
+            this.groupBox1.Controls.Add(this.listBoxZipDem);
+            this.groupBox1.Controls.Add(this.listBoxCityDem);
+            this.groupBox1.Controls.Add(this.boxStateDem);
             this.groupBox1.Controls.Add(this.labelZip);
             this.groupBox1.Controls.Add(this.labelCity);
             this.groupBox1.Controls.Add(this.labelState);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Location = new System.Drawing.Point(3, 6);
             this.groupBox1.Name = "groupBox1";
@@ -235,46 +236,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Business Location";
             // 
-            // listBoxZip
+            // listBoxZipDem
             // 
-            this.listBoxZip.BackColor = System.Drawing.Color.Gray;
-            this.listBoxZip.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxZip.ForeColor = System.Drawing.Color.White;
-            this.listBoxZip.FormattingEnabled = true;
-            this.listBoxZip.Location = new System.Drawing.Point(96, 314);
-            this.listBoxZip.Name = "listBoxZip";
-            this.listBoxZip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listBoxZip.ScrollAlwaysVisible = true;
-            this.listBoxZip.Size = new System.Drawing.Size(249, 147);
-            this.listBoxZip.TabIndex = 4;
-            this.listBoxZip.SelectedValueChanged += new System.EventHandler(this.listBoxZip_SelectedValueChanged);
+            this.listBoxZipDem.BackColor = System.Drawing.Color.Gray;
+            this.listBoxZipDem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBoxZipDem.ForeColor = System.Drawing.Color.White;
+            this.listBoxZipDem.FormattingEnabled = true;
+            this.listBoxZipDem.Location = new System.Drawing.Point(96, 314);
+            this.listBoxZipDem.Name = "listBoxZipDem";
+            this.listBoxZipDem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBoxZipDem.ScrollAlwaysVisible = true;
+            this.listBoxZipDem.Size = new System.Drawing.Size(249, 147);
+            this.listBoxZipDem.TabIndex = 4;
+            this.listBoxZipDem.SelectedValueChanged += new System.EventHandler(this.listBoxZip_SelectedValueChanged);
             // 
-            // listBoxCity
+            // listBoxCityDem
             // 
-            this.listBoxCity.BackColor = System.Drawing.Color.Gray;
-            this.listBoxCity.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxCity.ForeColor = System.Drawing.Color.White;
-            this.listBoxCity.FormattingEnabled = true;
-            this.listBoxCity.Location = new System.Drawing.Point(96, 84);
-            this.listBoxCity.Name = "listBoxCity";
-            this.listBoxCity.ScrollAlwaysVisible = true;
-            this.listBoxCity.Size = new System.Drawing.Size(249, 212);
-            this.listBoxCity.TabIndex = 2;
-            this.listBoxCity.SelectedValueChanged += new System.EventHandler(this.listBoxCity_SelectedValueChanged);
+            this.listBoxCityDem.BackColor = System.Drawing.Color.Gray;
+            this.listBoxCityDem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBoxCityDem.ForeColor = System.Drawing.Color.White;
+            this.listBoxCityDem.FormattingEnabled = true;
+            this.listBoxCityDem.Location = new System.Drawing.Point(96, 84);
+            this.listBoxCityDem.Name = "listBoxCityDem";
+            this.listBoxCityDem.ScrollAlwaysVisible = true;
+            this.listBoxCityDem.Size = new System.Drawing.Size(249, 212);
+            this.listBoxCityDem.TabIndex = 2;
+            this.listBoxCityDem.SelectedValueChanged += new System.EventHandler(this.listBoxCity_SelectedValueChanged);
             // 
-            // boxState
+            // boxStateDem
             // 
-            this.boxState.BackColor = System.Drawing.Color.Gray;
-            this.boxState.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.boxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxState.ForeColor = System.Drawing.Color.White;
-            this.boxState.FormattingEnabled = true;
-            this.boxState.Location = new System.Drawing.Point(96, 43);
-            this.boxState.Name = "boxState";
-            this.boxState.Size = new System.Drawing.Size(249, 21);
-            this.boxState.TabIndex = 3;
-            this.boxState.DropDown += new System.EventHandler(this.boxState_DropDown);
-            this.boxState.SelectionChangeCommitted += new System.EventHandler(this.boxState_SelectionChangeCommitted);
+            this.boxStateDem.BackColor = System.Drawing.Color.Gray;
+            this.boxStateDem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.boxStateDem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxStateDem.ForeColor = System.Drawing.Color.White;
+            this.boxStateDem.FormattingEnabled = true;
+            this.boxStateDem.Location = new System.Drawing.Point(96, 43);
+            this.boxStateDem.Name = "boxStateDem";
+            this.boxStateDem.Size = new System.Drawing.Size(249, 21);
+            this.boxStateDem.TabIndex = 3;
+            this.boxStateDem.DropDown += new System.EventHandler(this.boxState_DropDown);
+            this.boxStateDem.SelectionChangeCommitted += new System.EventHandler(this.boxState_SelectionChangeCommitted);
             // 
             // labelZip
             // 
@@ -309,8 +310,9 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox5.Controls.Add(this.buttonAddCategory);
-            this.groupBox5.Controls.Add(this.listBoxCategory);
+            this.groupBox5.Controls.Add(this.buttonAddCategoryDem);
+            this.groupBox5.Controls.Add(this.listBoxCategoryDem);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox5.Location = new System.Drawing.Point(3, 495);
             this.groupBox5.Name = "groupBox5";
@@ -319,40 +321,40 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Select Business Category";
             // 
-            // buttonAddCategory
+            // buttonAddCategoryDem
             // 
-            this.buttonAddCategory.BackColor = System.Drawing.Color.Silver;
-            this.buttonAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonAddCategory.Location = new System.Drawing.Point(18, 214);
-            this.buttonAddCategory.Name = "buttonAddCategory";
-            this.buttonAddCategory.Size = new System.Drawing.Size(317, 28);
-            this.buttonAddCategory.TabIndex = 1;
-            this.buttonAddCategory.Text = "ADD";
-            this.buttonAddCategory.UseVisualStyleBackColor = false;
-            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
+            this.buttonAddCategoryDem.BackColor = System.Drawing.Color.Silver;
+            this.buttonAddCategoryDem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddCategoryDem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAddCategoryDem.Location = new System.Drawing.Point(18, 214);
+            this.buttonAddCategoryDem.Name = "buttonAddCategoryDem";
+            this.buttonAddCategoryDem.Size = new System.Drawing.Size(317, 28);
+            this.buttonAddCategoryDem.TabIndex = 1;
+            this.buttonAddCategoryDem.Text = "ADD";
+            this.buttonAddCategoryDem.UseVisualStyleBackColor = false;
+            this.buttonAddCategoryDem.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
-            // listBoxCategory
+            // listBoxCategoryDem
             // 
-            this.listBoxCategory.BackColor = System.Drawing.Color.Gray;
-            this.listBoxCategory.ForeColor = System.Drawing.Color.White;
-            this.listBoxCategory.FormattingEnabled = true;
-            this.listBoxCategory.Location = new System.Drawing.Point(7, 19);
-            this.listBoxCategory.Name = "listBoxCategory";
-            this.listBoxCategory.ScrollAlwaysVisible = true;
-            this.listBoxCategory.Size = new System.Drawing.Size(338, 186);
-            this.listBoxCategory.TabIndex = 0;
+            this.listBoxCategoryDem.BackColor = System.Drawing.Color.Gray;
+            this.listBoxCategoryDem.ForeColor = System.Drawing.Color.White;
+            this.listBoxCategoryDem.FormattingEnabled = true;
+            this.listBoxCategoryDem.Location = new System.Drawing.Point(7, 19);
+            this.listBoxCategoryDem.Name = "listBoxCategoryDem";
+            this.listBoxCategoryDem.ScrollAlwaysVisible = true;
+            this.listBoxCategoryDem.Size = new System.Drawing.Size(338, 186);
+            this.listBoxCategoryDem.TabIndex = 0;
             // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.Gray;
             this.groupBox7.Controls.Add(this.label1);
-            this.groupBox7.Controls.Add(this.listBoxSearchResults);
+            this.groupBox7.Controls.Add(this.listBoxSearchResultsZip);
             this.groupBox7.Controls.Add(this.label2);
             this.groupBox7.Controls.Add(this.label3);
-            this.groupBox7.Controls.Add(this.textBoxCity);
-            this.groupBox7.Controls.Add(this.textBoxState);
             this.groupBox7.Controls.Add(this.textBoxZip);
+            this.groupBox7.Controls.Add(this.textBoxRatingZip);
+            this.groupBox7.Controls.Add(this.textBoxReviewsZip);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(20, 19);
             this.groupBox7.Name = "groupBox7";
@@ -371,17 +373,17 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "# of Reviews";
             // 
-            // listBoxSearchResults
+            // listBoxSearchResultsZip
             // 
-            this.listBoxSearchResults.BackColor = System.Drawing.Color.Silver;
-            this.listBoxSearchResults.ForeColor = System.Drawing.Color.Black;
-            this.listBoxSearchResults.FormattingEnabled = true;
-            this.listBoxSearchResults.Location = new System.Drawing.Point(7, 20);
-            this.listBoxSearchResults.Name = "listBoxSearchResults";
-            this.listBoxSearchResults.ScrollAlwaysVisible = true;
-            this.listBoxSearchResults.Size = new System.Drawing.Size(314, 290);
-            this.listBoxSearchResults.TabIndex = 0;
-            this.listBoxSearchResults.SelectedValueChanged += new System.EventHandler(this.listBoxSearchResults_SelectedValueChanged);
+            this.listBoxSearchResultsZip.BackColor = System.Drawing.Color.Silver;
+            this.listBoxSearchResultsZip.ForeColor = System.Drawing.Color.Black;
+            this.listBoxSearchResultsZip.FormattingEnabled = true;
+            this.listBoxSearchResultsZip.Location = new System.Drawing.Point(7, 20);
+            this.listBoxSearchResultsZip.Name = "listBoxSearchResultsZip";
+            this.listBoxSearchResultsZip.ScrollAlwaysVisible = true;
+            this.listBoxSearchResultsZip.Size = new System.Drawing.Size(314, 290);
+            this.listBoxSearchResultsZip.TabIndex = 0;
+            this.listBoxSearchResultsZip.SelectedValueChanged += new System.EventHandler(this.listBoxSearchResults_SelectedValueChanged);
             // 
             // label2
             // 
@@ -404,44 +406,45 @@
             this.label3.Text = "Zipcode";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBoxCity
-            // 
-            this.textBoxCity.BackColor = System.Drawing.Color.Silver;
-            this.textBoxCity.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCity.Location = new System.Drawing.Point(113, 335);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.ReadOnly = true;
-            this.textBoxCity.Size = new System.Drawing.Size(193, 20);
-            this.textBoxCity.TabIndex = 14;
-            this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxState
-            // 
-            this.textBoxState.BackColor = System.Drawing.Color.Silver;
-            this.textBoxState.ForeColor = System.Drawing.Color.Black;
-            this.textBoxState.Location = new System.Drawing.Point(113, 366);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.ReadOnly = true;
-            this.textBoxState.Size = new System.Drawing.Size(193, 20);
-            this.textBoxState.TabIndex = 16;
-            this.textBoxState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // textBoxZip
             // 
             this.textBoxZip.BackColor = System.Drawing.Color.Silver;
             this.textBoxZip.ForeColor = System.Drawing.Color.Black;
-            this.textBoxZip.Location = new System.Drawing.Point(113, 397);
+            this.textBoxZip.Location = new System.Drawing.Point(113, 335);
             this.textBoxZip.Name = "textBoxZip";
             this.textBoxZip.ReadOnly = true;
             this.textBoxZip.Size = new System.Drawing.Size(193, 20);
-            this.textBoxZip.TabIndex = 15;
+            this.textBoxZip.TabIndex = 14;
             this.textBoxZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxRatingZip
+            // 
+            this.textBoxRatingZip.BackColor = System.Drawing.Color.Silver;
+            this.textBoxRatingZip.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRatingZip.Location = new System.Drawing.Point(113, 366);
+            this.textBoxRatingZip.Name = "textBoxRatingZip";
+            this.textBoxRatingZip.ReadOnly = true;
+            this.textBoxRatingZip.Size = new System.Drawing.Size(193, 20);
+            this.textBoxRatingZip.TabIndex = 16;
+            this.textBoxRatingZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxReviewsZip
+            // 
+            this.textBoxReviewsZip.BackColor = System.Drawing.Color.Silver;
+            this.textBoxReviewsZip.ForeColor = System.Drawing.Color.Black;
+            this.textBoxReviewsZip.Location = new System.Drawing.Point(113, 397);
+            this.textBoxReviewsZip.Name = "textBoxReviewsZip";
+            this.textBoxReviewsZip.ReadOnly = true;
+            this.textBoxReviewsZip.Size = new System.Drawing.Size(193, 20);
+            this.textBoxReviewsZip.TabIndex = 15;
+            this.textBoxReviewsZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox8.Controls.Add(this.buttonRemoveCategory);
-            this.groupBox8.Controls.Add(this.listBoxSelectedCategories);
+            this.groupBox8.Controls.Add(this.buttonRemoveCategoryDem);
+            this.groupBox8.Controls.Add(this.listBoxSelectedCategoriesDem);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox8.Location = new System.Drawing.Point(3, 755);
             this.groupBox8.Name = "groupBox8";
@@ -450,34 +453,35 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Selected Categories";
             // 
-            // buttonRemoveCategory
+            // buttonRemoveCategoryDem
             // 
-            this.buttonRemoveCategory.BackColor = System.Drawing.Color.Silver;
-            this.buttonRemoveCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRemoveCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonRemoveCategory.Location = new System.Drawing.Point(18, 175);
-            this.buttonRemoveCategory.Name = "buttonRemoveCategory";
-            this.buttonRemoveCategory.Size = new System.Drawing.Size(317, 28);
-            this.buttonRemoveCategory.TabIndex = 2;
-            this.buttonRemoveCategory.Text = "REMOVE";
-            this.buttonRemoveCategory.UseVisualStyleBackColor = false;
-            this.buttonRemoveCategory.Click += new System.EventHandler(this.buttonRemoveCategory_Click);
+            this.buttonRemoveCategoryDem.BackColor = System.Drawing.Color.Silver;
+            this.buttonRemoveCategoryDem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveCategoryDem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRemoveCategoryDem.Location = new System.Drawing.Point(18, 175);
+            this.buttonRemoveCategoryDem.Name = "buttonRemoveCategoryDem";
+            this.buttonRemoveCategoryDem.Size = new System.Drawing.Size(317, 28);
+            this.buttonRemoveCategoryDem.TabIndex = 2;
+            this.buttonRemoveCategoryDem.Text = "REMOVE";
+            this.buttonRemoveCategoryDem.UseVisualStyleBackColor = false;
+            this.buttonRemoveCategoryDem.Click += new System.EventHandler(this.buttonRemoveCategory_Click);
             // 
-            // listBoxSelectedCategories
+            // listBoxSelectedCategoriesDem
             // 
-            this.listBoxSelectedCategories.BackColor = System.Drawing.Color.Gray;
-            this.listBoxSelectedCategories.ForeColor = System.Drawing.Color.White;
-            this.listBoxSelectedCategories.FormattingEnabled = true;
-            this.listBoxSelectedCategories.Location = new System.Drawing.Point(6, 19);
-            this.listBoxSelectedCategories.Name = "listBoxSelectedCategories";
-            this.listBoxSelectedCategories.ScrollAlwaysVisible = true;
-            this.listBoxSelectedCategories.Size = new System.Drawing.Size(339, 147);
-            this.listBoxSelectedCategories.TabIndex = 2;
+            this.listBoxSelectedCategoriesDem.BackColor = System.Drawing.Color.Gray;
+            this.listBoxSelectedCategoriesDem.ForeColor = System.Drawing.Color.White;
+            this.listBoxSelectedCategoriesDem.FormattingEnabled = true;
+            this.listBoxSelectedCategoriesDem.Location = new System.Drawing.Point(6, 19);
+            this.listBoxSelectedCategoriesDem.Name = "listBoxSelectedCategoriesDem";
+            this.listBoxSelectedCategoriesDem.ScrollAlwaysVisible = true;
+            this.listBoxSelectedCategoriesDem.Size = new System.Drawing.Size(339, 147);
+            this.listBoxSelectedCategoriesDem.TabIndex = 2;
             // 
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox9.Controls.Add(this.groupBox2);
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.White;
             this.groupBox9.Location = new System.Drawing.Point(371, 6);
             this.groupBox9.Name = "groupBox9";
@@ -508,14 +512,14 @@
             this.groupBox4.Controls.Add(this.label44);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.textBox24);
-            this.groupBox4.Controls.Add(this.textBox44);
-            this.groupBox4.Controls.Add(this.textBox65);
-            this.groupBox4.Controls.Add(this.textBox64);
-            this.groupBox4.Controls.Add(this.textBox18);
+            this.groupBox4.Controls.Add(this.textBox24State);
+            this.groupBox4.Controls.Add(this.textBox44State);
+            this.groupBox4.Controls.Add(this.textBox65State);
+            this.groupBox4.Controls.Add(this.textBox64State);
+            this.groupBox4.Controls.Add(this.textBox18State);
             this.groupBox4.Controls.Add(this.labelPercent);
             this.groupBox4.Controls.Add(this.labelAge);
-            this.groupBox4.Controls.Add(this.textBoxAge);
+            this.groupBox4.Controls.Add(this.textBoxAgeState);
             this.groupBox4.Controls.Add(this.labelMedAge);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -577,60 +581,60 @@
             this.label18.TabIndex = 9;
             this.label18.Text = "Under 18";
             // 
-            // textBox24
+            // textBox24State
             // 
-            this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox24.ForeColor = System.Drawing.Color.Black;
-            this.textBox24.Location = new System.Drawing.Point(157, 92);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(102, 22);
-            this.textBox24.TabIndex = 8;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox24State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox24State.ForeColor = System.Drawing.Color.Black;
+            this.textBox24State.Location = new System.Drawing.Point(157, 92);
+            this.textBox24State.Name = "textBox24State";
+            this.textBox24State.ReadOnly = true;
+            this.textBox24State.Size = new System.Drawing.Size(102, 22);
+            this.textBox24State.TabIndex = 8;
+            this.textBox24State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox44
+            // textBox44State
             // 
-            this.textBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox44.ForeColor = System.Drawing.Color.Black;
-            this.textBox44.Location = new System.Drawing.Point(157, 123);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.ReadOnly = true;
-            this.textBox44.Size = new System.Drawing.Size(102, 22);
-            this.textBox44.TabIndex = 7;
-            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox44State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox44State.ForeColor = System.Drawing.Color.Black;
+            this.textBox44State.Location = new System.Drawing.Point(157, 123);
+            this.textBox44State.Name = "textBox44State";
+            this.textBox44State.ReadOnly = true;
+            this.textBox44State.Size = new System.Drawing.Size(102, 22);
+            this.textBox44State.TabIndex = 7;
+            this.textBox44State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox65
+            // textBox65State
             // 
-            this.textBox65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox65.ForeColor = System.Drawing.Color.Black;
-            this.textBox65.Location = new System.Drawing.Point(157, 185);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.ReadOnly = true;
-            this.textBox65.Size = new System.Drawing.Size(102, 22);
-            this.textBox65.TabIndex = 6;
-            this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox65State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox65State.ForeColor = System.Drawing.Color.Black;
+            this.textBox65State.Location = new System.Drawing.Point(157, 185);
+            this.textBox65State.Name = "textBox65State";
+            this.textBox65State.ReadOnly = true;
+            this.textBox65State.Size = new System.Drawing.Size(102, 22);
+            this.textBox65State.TabIndex = 6;
+            this.textBox65State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox64
+            // textBox64State
             // 
-            this.textBox64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox64.ForeColor = System.Drawing.Color.Black;
-            this.textBox64.Location = new System.Drawing.Point(157, 154);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.ReadOnly = true;
-            this.textBox64.Size = new System.Drawing.Size(102, 22);
-            this.textBox64.TabIndex = 5;
-            this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox64State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox64State.ForeColor = System.Drawing.Color.Black;
+            this.textBox64State.Location = new System.Drawing.Point(157, 154);
+            this.textBox64State.Name = "textBox64State";
+            this.textBox64State.ReadOnly = true;
+            this.textBox64State.Size = new System.Drawing.Size(102, 22);
+            this.textBox64State.TabIndex = 5;
+            this.textBox64State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox18
+            // textBox18State
             // 
-            this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox18.ForeColor = System.Drawing.Color.Black;
-            this.textBox18.Location = new System.Drawing.Point(157, 61);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(102, 22);
-            this.textBox18.TabIndex = 4;
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox18State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox18State.ForeColor = System.Drawing.Color.Black;
+            this.textBox18State.Location = new System.Drawing.Point(157, 61);
+            this.textBox18State.Name = "textBox18State";
+            this.textBox18State.ReadOnly = true;
+            this.textBox18State.Size = new System.Drawing.Size(102, 22);
+            this.textBox18State.TabIndex = 4;
+            this.textBox18State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelPercent
             // 
@@ -652,16 +656,16 @@
             this.labelAge.TabIndex = 2;
             this.labelAge.Text = "Age";
             // 
-            // textBoxAge
+            // textBoxAgeState
             // 
-            this.textBoxAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxAge.ForeColor = System.Drawing.Color.Black;
-            this.textBoxAge.Location = new System.Drawing.Point(107, 230);
-            this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.ReadOnly = true;
-            this.textBoxAge.Size = new System.Drawing.Size(193, 22);
-            this.textBoxAge.TabIndex = 1;
-            this.textBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAgeState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxAgeState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxAgeState.Location = new System.Drawing.Point(107, 230);
+            this.textBoxAgeState.Name = "textBoxAgeState";
+            this.textBoxAgeState.ReadOnly = true;
+            this.textBoxAgeState.Size = new System.Drawing.Size(193, 22);
+            this.textBoxAgeState.TabIndex = 1;
+            this.textBoxAgeState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelMedAge
             // 
@@ -676,8 +680,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Silver;
-            this.groupBox3.Controls.Add(this.textBoxIncome);
-            this.groupBox3.Controls.Add(this.textBoxPop);
+            this.groupBox3.Controls.Add(this.textBoxIncomeState);
+            this.groupBox3.Controls.Add(this.textBoxPopState);
             this.groupBox3.Controls.Add(this.labelIncome);
             this.groupBox3.Controls.Add(this.labelPop);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -689,28 +693,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Zipcode Demographics";
             // 
-            // textBoxIncome
+            // textBoxIncomeState
             // 
-            this.textBoxIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxIncome.ForeColor = System.Drawing.Color.Black;
-            this.textBoxIncome.Location = new System.Drawing.Point(107, 74);
-            this.textBoxIncome.Name = "textBoxIncome";
-            this.textBoxIncome.ReadOnly = true;
-            this.textBoxIncome.Size = new System.Drawing.Size(193, 20);
-            this.textBoxIncome.TabIndex = 3;
-            this.textBoxIncome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxIncomeState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxIncomeState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxIncomeState.Location = new System.Drawing.Point(107, 74);
+            this.textBoxIncomeState.Name = "textBoxIncomeState";
+            this.textBoxIncomeState.ReadOnly = true;
+            this.textBoxIncomeState.Size = new System.Drawing.Size(193, 20);
+            this.textBoxIncomeState.TabIndex = 3;
+            this.textBoxIncomeState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBoxPop
+            // textBoxPopState
             // 
-            this.textBoxPop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPop.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPop.Location = new System.Drawing.Point(107, 28);
-            this.textBoxPop.Name = "textBoxPop";
-            this.textBoxPop.ReadOnly = true;
-            this.textBoxPop.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxPop.Size = new System.Drawing.Size(193, 20);
-            this.textBoxPop.TabIndex = 2;
-            this.textBoxPop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPopState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxPopState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPopState.Location = new System.Drawing.Point(107, 28);
+            this.textBoxPopState.Name = "textBoxPopState";
+            this.textBoxPopState.ReadOnly = true;
+            this.textBoxPopState.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxPopState.Size = new System.Drawing.Size(193, 20);
+            this.textBoxPopState.TabIndex = 2;
+            this.textBoxPopState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelIncome
             // 
@@ -736,6 +740,7 @@
             // 
             this.groupBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox10.Controls.Add(this.groupBox11);
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.ForeColor = System.Drawing.Color.White;
             this.groupBox10.Location = new System.Drawing.Point(740, 6);
             this.groupBox10.Name = "groupBox10";
@@ -766,14 +771,14 @@
             this.groupBox12.Controls.Add(this.label6);
             this.groupBox12.Controls.Add(this.label7);
             this.groupBox12.Controls.Add(this.label8);
-            this.groupBox12.Controls.Add(this.textBox1);
-            this.groupBox12.Controls.Add(this.textBox2);
-            this.groupBox12.Controls.Add(this.textBox3);
-            this.groupBox12.Controls.Add(this.textBox4);
-            this.groupBox12.Controls.Add(this.textBox5);
+            this.groupBox12.Controls.Add(this.textBox24City);
+            this.groupBox12.Controls.Add(this.textBox44City);
+            this.groupBox12.Controls.Add(this.textBox65City);
+            this.groupBox12.Controls.Add(this.textBox64City);
+            this.groupBox12.Controls.Add(this.textBox18City);
             this.groupBox12.Controls.Add(this.label9);
             this.groupBox12.Controls.Add(this.label10);
-            this.groupBox12.Controls.Add(this.textBox6);
+            this.groupBox12.Controls.Add(this.textBoxAgeCity);
             this.groupBox12.Controls.Add(this.label11);
             this.groupBox12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -835,60 +840,60 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Under 18";
             // 
-            // textBox1
+            // textBox24City
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(157, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(102, 22);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox24City.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox24City.ForeColor = System.Drawing.Color.Black;
+            this.textBox24City.Location = new System.Drawing.Point(157, 92);
+            this.textBox24City.Name = "textBox24City";
+            this.textBox24City.ReadOnly = true;
+            this.textBox24City.Size = new System.Drawing.Size(102, 22);
+            this.textBox24City.TabIndex = 8;
+            this.textBox24City.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // textBox44City
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(157, 123);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(102, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox44City.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox44City.ForeColor = System.Drawing.Color.Black;
+            this.textBox44City.Location = new System.Drawing.Point(157, 123);
+            this.textBox44City.Name = "textBox44City";
+            this.textBox44City.ReadOnly = true;
+            this.textBox44City.Size = new System.Drawing.Size(102, 22);
+            this.textBox44City.TabIndex = 7;
+            this.textBox44City.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // textBox65City
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(157, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(102, 22);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox65City.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox65City.ForeColor = System.Drawing.Color.Black;
+            this.textBox65City.Location = new System.Drawing.Point(157, 185);
+            this.textBox65City.Name = "textBox65City";
+            this.textBox65City.ReadOnly = true;
+            this.textBox65City.Size = new System.Drawing.Size(102, 22);
+            this.textBox65City.TabIndex = 6;
+            this.textBox65City.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // textBox64City
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(157, 154);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(102, 22);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox64City.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox64City.ForeColor = System.Drawing.Color.Black;
+            this.textBox64City.Location = new System.Drawing.Point(157, 154);
+            this.textBox64City.Name = "textBox64City";
+            this.textBox64City.ReadOnly = true;
+            this.textBox64City.Size = new System.Drawing.Size(102, 22);
+            this.textBox64City.TabIndex = 5;
+            this.textBox64City.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // textBox18City
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(157, 61);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(102, 22);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox18City.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox18City.ForeColor = System.Drawing.Color.Black;
+            this.textBox18City.Location = new System.Drawing.Point(157, 61);
+            this.textBox18City.Name = "textBox18City";
+            this.textBox18City.ReadOnly = true;
+            this.textBox18City.Size = new System.Drawing.Size(102, 22);
+            this.textBox18City.TabIndex = 4;
+            this.textBox18City.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -910,16 +915,16 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Age";
             // 
-            // textBox6
+            // textBoxAgeCity
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox6.ForeColor = System.Drawing.Color.Black;
-            this.textBox6.Location = new System.Drawing.Point(107, 230);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(193, 22);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAgeCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxAgeCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxAgeCity.Location = new System.Drawing.Point(107, 230);
+            this.textBoxAgeCity.Name = "textBoxAgeCity";
+            this.textBoxAgeCity.ReadOnly = true;
+            this.textBoxAgeCity.Size = new System.Drawing.Size(193, 22);
+            this.textBoxAgeCity.TabIndex = 1;
+            this.textBoxAgeCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -934,8 +939,8 @@
             // groupBox13
             // 
             this.groupBox13.BackColor = System.Drawing.Color.Silver;
-            this.groupBox13.Controls.Add(this.textBox7);
-            this.groupBox13.Controls.Add(this.textBox8);
+            this.groupBox13.Controls.Add(this.textBoxIncomeCity);
+            this.groupBox13.Controls.Add(this.textBoxPopCity);
             this.groupBox13.Controls.Add(this.label12);
             this.groupBox13.Controls.Add(this.label13);
             this.groupBox13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -947,28 +952,28 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Zipcode Demographics";
             // 
-            // textBox7
+            // textBoxIncomeCity
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox7.ForeColor = System.Drawing.Color.Black;
-            this.textBox7.Location = new System.Drawing.Point(107, 74);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(193, 20);
-            this.textBox7.TabIndex = 3;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxIncomeCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxIncomeCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxIncomeCity.Location = new System.Drawing.Point(107, 74);
+            this.textBoxIncomeCity.Name = "textBoxIncomeCity";
+            this.textBoxIncomeCity.ReadOnly = true;
+            this.textBoxIncomeCity.Size = new System.Drawing.Size(193, 20);
+            this.textBoxIncomeCity.TabIndex = 3;
+            this.textBoxIncomeCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox8
+            // textBoxPopCity
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox8.ForeColor = System.Drawing.Color.Black;
-            this.textBox8.Location = new System.Drawing.Point(107, 28);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox8.Size = new System.Drawing.Size(193, 20);
-            this.textBox8.TabIndex = 2;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPopCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxPopCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPopCity.Location = new System.Drawing.Point(107, 28);
+            this.textBoxPopCity.Name = "textBoxPopCity";
+            this.textBoxPopCity.ReadOnly = true;
+            this.textBoxPopCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxPopCity.Size = new System.Drawing.Size(193, 20);
+            this.textBoxPopCity.TabIndex = 2;
+            this.textBoxPopCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -994,6 +999,7 @@
             // 
             this.groupBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox14.Controls.Add(this.groupBox15);
+            this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.ForeColor = System.Drawing.Color.White;
             this.groupBox14.Location = new System.Drawing.Point(1109, 6);
             this.groupBox14.Name = "groupBox14";
@@ -1024,14 +1030,14 @@
             this.groupBox16.Controls.Add(this.label16);
             this.groupBox16.Controls.Add(this.label17);
             this.groupBox16.Controls.Add(this.label19);
-            this.groupBox16.Controls.Add(this.textBox9);
-            this.groupBox16.Controls.Add(this.textBox10);
-            this.groupBox16.Controls.Add(this.textBox11);
-            this.groupBox16.Controls.Add(this.textBox12);
-            this.groupBox16.Controls.Add(this.textBox13);
+            this.groupBox16.Controls.Add(this.textBox24Zip);
+            this.groupBox16.Controls.Add(this.textBox44Zip);
+            this.groupBox16.Controls.Add(this.textBox65Zip);
+            this.groupBox16.Controls.Add(this.textBox64Zip);
+            this.groupBox16.Controls.Add(this.textBox18Zip);
             this.groupBox16.Controls.Add(this.label20);
             this.groupBox16.Controls.Add(this.label21);
-            this.groupBox16.Controls.Add(this.textBox14);
+            this.groupBox16.Controls.Add(this.textBoxAgeZip);
             this.groupBox16.Controls.Add(this.label22);
             this.groupBox16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1093,60 +1099,60 @@
             this.label19.TabIndex = 9;
             this.label19.Text = "Under 18";
             // 
-            // textBox9
+            // textBox24Zip
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox9.ForeColor = System.Drawing.Color.Black;
-            this.textBox9.Location = new System.Drawing.Point(157, 92);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(102, 22);
-            this.textBox9.TabIndex = 8;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox24Zip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox24Zip.ForeColor = System.Drawing.Color.Black;
+            this.textBox24Zip.Location = new System.Drawing.Point(157, 92);
+            this.textBox24Zip.Name = "textBox24Zip";
+            this.textBox24Zip.ReadOnly = true;
+            this.textBox24Zip.Size = new System.Drawing.Size(102, 22);
+            this.textBox24Zip.TabIndex = 8;
+            this.textBox24Zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox10
+            // textBox44Zip
             // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox10.ForeColor = System.Drawing.Color.Black;
-            this.textBox10.Location = new System.Drawing.Point(157, 123);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(102, 22);
-            this.textBox10.TabIndex = 7;
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox44Zip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox44Zip.ForeColor = System.Drawing.Color.Black;
+            this.textBox44Zip.Location = new System.Drawing.Point(157, 123);
+            this.textBox44Zip.Name = "textBox44Zip";
+            this.textBox44Zip.ReadOnly = true;
+            this.textBox44Zip.Size = new System.Drawing.Size(102, 22);
+            this.textBox44Zip.TabIndex = 7;
+            this.textBox44Zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox11
+            // textBox65Zip
             // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox11.ForeColor = System.Drawing.Color.Black;
-            this.textBox11.Location = new System.Drawing.Point(157, 185);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(102, 22);
-            this.textBox11.TabIndex = 6;
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox65Zip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox65Zip.ForeColor = System.Drawing.Color.Black;
+            this.textBox65Zip.Location = new System.Drawing.Point(157, 185);
+            this.textBox65Zip.Name = "textBox65Zip";
+            this.textBox65Zip.ReadOnly = true;
+            this.textBox65Zip.Size = new System.Drawing.Size(102, 22);
+            this.textBox65Zip.TabIndex = 6;
+            this.textBox65Zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox12
+            // textBox64Zip
             // 
-            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox12.ForeColor = System.Drawing.Color.Black;
-            this.textBox12.Location = new System.Drawing.Point(157, 154);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(102, 22);
-            this.textBox12.TabIndex = 5;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox64Zip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox64Zip.ForeColor = System.Drawing.Color.Black;
+            this.textBox64Zip.Location = new System.Drawing.Point(157, 154);
+            this.textBox64Zip.Name = "textBox64Zip";
+            this.textBox64Zip.ReadOnly = true;
+            this.textBox64Zip.Size = new System.Drawing.Size(102, 22);
+            this.textBox64Zip.TabIndex = 5;
+            this.textBox64Zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox13
+            // textBox18Zip
             // 
-            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox13.ForeColor = System.Drawing.Color.Black;
-            this.textBox13.Location = new System.Drawing.Point(157, 61);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(102, 22);
-            this.textBox13.TabIndex = 4;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox18Zip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox18Zip.ForeColor = System.Drawing.Color.Black;
+            this.textBox18Zip.Location = new System.Drawing.Point(157, 61);
+            this.textBox18Zip.Name = "textBox18Zip";
+            this.textBox18Zip.ReadOnly = true;
+            this.textBox18Zip.Size = new System.Drawing.Size(102, 22);
+            this.textBox18Zip.TabIndex = 4;
+            this.textBox18Zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label20
             // 
@@ -1168,16 +1174,16 @@
             this.label21.TabIndex = 2;
             this.label21.Text = "Age";
             // 
-            // textBox14
+            // textBoxAgeZip
             // 
-            this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox14.ForeColor = System.Drawing.Color.Black;
-            this.textBox14.Location = new System.Drawing.Point(107, 230);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(193, 22);
-            this.textBox14.TabIndex = 1;
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAgeZip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxAgeZip.ForeColor = System.Drawing.Color.Black;
+            this.textBoxAgeZip.Location = new System.Drawing.Point(107, 230);
+            this.textBoxAgeZip.Name = "textBoxAgeZip";
+            this.textBoxAgeZip.ReadOnly = true;
+            this.textBoxAgeZip.Size = new System.Drawing.Size(193, 22);
+            this.textBoxAgeZip.TabIndex = 1;
+            this.textBoxAgeZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -1192,8 +1198,8 @@
             // groupBox17
             // 
             this.groupBox17.BackColor = System.Drawing.Color.Silver;
-            this.groupBox17.Controls.Add(this.textBox15);
-            this.groupBox17.Controls.Add(this.textBox16);
+            this.groupBox17.Controls.Add(this.textBoxIncomeZip);
+            this.groupBox17.Controls.Add(this.textBoxPopZip);
             this.groupBox17.Controls.Add(this.label23);
             this.groupBox17.Controls.Add(this.label25);
             this.groupBox17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -1205,28 +1211,28 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Zipcode Demographics";
             // 
-            // textBox15
+            // textBoxIncomeZip
             // 
-            this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox15.ForeColor = System.Drawing.Color.Black;
-            this.textBox15.Location = new System.Drawing.Point(107, 74);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(193, 20);
-            this.textBox15.TabIndex = 3;
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxIncomeZip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxIncomeZip.ForeColor = System.Drawing.Color.Black;
+            this.textBoxIncomeZip.Location = new System.Drawing.Point(107, 74);
+            this.textBoxIncomeZip.Name = "textBoxIncomeZip";
+            this.textBoxIncomeZip.ReadOnly = true;
+            this.textBoxIncomeZip.Size = new System.Drawing.Size(193, 20);
+            this.textBoxIncomeZip.TabIndex = 3;
+            this.textBoxIncomeZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox16
+            // textBoxPopZip
             // 
-            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox16.ForeColor = System.Drawing.Color.Black;
-            this.textBox16.Location = new System.Drawing.Point(107, 28);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox16.Size = new System.Drawing.Size(193, 20);
-            this.textBox16.TabIndex = 2;
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPopZip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxPopZip.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPopZip.Location = new System.Drawing.Point(107, 28);
+            this.textBoxPopZip.Name = "textBoxPopZip";
+            this.textBoxPopZip.ReadOnly = true;
+            this.textBoxPopZip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxPopZip.Size = new System.Drawing.Size(193, 20);
+            this.textBoxPopZip.TabIndex = 2;
+            this.textBoxPopZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label23
             // 
@@ -1252,6 +1258,7 @@
             // 
             this.groupBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox18.Controls.Add(this.groupBox7);
+            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.ForeColor = System.Drawing.Color.White;
             this.groupBox18.Location = new System.Drawing.Point(1110, 495);
             this.groupBox18.Name = "groupBox18";
@@ -1264,6 +1271,7 @@
             // 
             this.groupBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox19.Controls.Add(this.groupBox20);
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.ForeColor = System.Drawing.Color.White;
             this.groupBox19.Location = new System.Drawing.Point(740, 495);
             this.groupBox19.Name = "groupBox19";
@@ -1276,12 +1284,12 @@
             // 
             this.groupBox20.BackColor = System.Drawing.Color.Gray;
             this.groupBox20.Controls.Add(this.label26);
-            this.groupBox20.Controls.Add(this.listBox1);
+            this.groupBox20.Controls.Add(this.listBoxSearchResultsCity);
             this.groupBox20.Controls.Add(this.label27);
             this.groupBox20.Controls.Add(this.label28);
-            this.groupBox20.Controls.Add(this.textBox17);
-            this.groupBox20.Controls.Add(this.textBox19);
-            this.groupBox20.Controls.Add(this.textBox20);
+            this.groupBox20.Controls.Add(this.textBoxCity);
+            this.groupBox20.Controls.Add(this.textBoxRatingCity);
+            this.groupBox20.Controls.Add(this.textBoxReviewsCity);
             this.groupBox20.ForeColor = System.Drawing.Color.White;
             this.groupBox20.Location = new System.Drawing.Point(20, 19);
             this.groupBox20.Name = "groupBox20";
@@ -1300,16 +1308,17 @@
             this.label26.TabIndex = 19;
             this.label26.Text = "# of Reviews";
             // 
-            // listBox1
+            // listBoxSearchResultsCity
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Silver;
-            this.listBox1.ForeColor = System.Drawing.Color.Black;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(7, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(314, 290);
-            this.listBox1.TabIndex = 0;
+            this.listBoxSearchResultsCity.BackColor = System.Drawing.Color.Silver;
+            this.listBoxSearchResultsCity.ForeColor = System.Drawing.Color.Black;
+            this.listBoxSearchResultsCity.FormattingEnabled = true;
+            this.listBoxSearchResultsCity.Location = new System.Drawing.Point(7, 20);
+            this.listBoxSearchResultsCity.Name = "listBoxSearchResultsCity";
+            this.listBoxSearchResultsCity.ScrollAlwaysVisible = true;
+            this.listBoxSearchResultsCity.Size = new System.Drawing.Size(314, 290);
+            this.listBoxSearchResultsCity.TabIndex = 0;
+            this.listBoxSearchResultsCity.SelectedValueChanged += new System.EventHandler(this.listBoxSearchResultsCity_SelectedValueChanged);
             // 
             // label27
             // 
@@ -1332,43 +1341,44 @@
             this.label28.Text = "City";
             this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox17
+            // textBoxCity
             // 
-            this.textBox17.BackColor = System.Drawing.Color.Silver;
-            this.textBox17.ForeColor = System.Drawing.Color.Black;
-            this.textBox17.Location = new System.Drawing.Point(114, 335);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(192, 20);
-            this.textBox17.TabIndex = 14;
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCity.BackColor = System.Drawing.Color.Silver;
+            this.textBoxCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxCity.Location = new System.Drawing.Point(114, 335);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.ReadOnly = true;
+            this.textBoxCity.Size = new System.Drawing.Size(192, 20);
+            this.textBoxCity.TabIndex = 14;
+            this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox19
+            // textBoxRatingCity
             // 
-            this.textBox19.BackColor = System.Drawing.Color.Silver;
-            this.textBox19.ForeColor = System.Drawing.Color.Black;
-            this.textBox19.Location = new System.Drawing.Point(114, 366);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(192, 20);
-            this.textBox19.TabIndex = 16;
-            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxRatingCity.BackColor = System.Drawing.Color.Silver;
+            this.textBoxRatingCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRatingCity.Location = new System.Drawing.Point(114, 366);
+            this.textBoxRatingCity.Name = "textBoxRatingCity";
+            this.textBoxRatingCity.ReadOnly = true;
+            this.textBoxRatingCity.Size = new System.Drawing.Size(192, 20);
+            this.textBoxRatingCity.TabIndex = 16;
+            this.textBoxRatingCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox20
+            // textBoxReviewsCity
             // 
-            this.textBox20.BackColor = System.Drawing.Color.Silver;
-            this.textBox20.ForeColor = System.Drawing.Color.Black;
-            this.textBox20.Location = new System.Drawing.Point(114, 397);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(192, 20);
-            this.textBox20.TabIndex = 15;
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxReviewsCity.BackColor = System.Drawing.Color.Silver;
+            this.textBoxReviewsCity.ForeColor = System.Drawing.Color.Black;
+            this.textBoxReviewsCity.Location = new System.Drawing.Point(114, 397);
+            this.textBoxReviewsCity.Name = "textBoxReviewsCity";
+            this.textBoxReviewsCity.ReadOnly = true;
+            this.textBoxReviewsCity.Size = new System.Drawing.Size(192, 20);
+            this.textBoxReviewsCity.TabIndex = 15;
+            this.textBoxReviewsCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox21
             // 
             this.groupBox21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox21.Controls.Add(this.groupBox22);
+            this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox21.ForeColor = System.Drawing.Color.White;
             this.groupBox21.Location = new System.Drawing.Point(371, 495);
             this.groupBox21.Name = "groupBox21";
@@ -1381,12 +1391,12 @@
             // 
             this.groupBox22.BackColor = System.Drawing.Color.Gray;
             this.groupBox22.Controls.Add(this.label29);
-            this.groupBox22.Controls.Add(this.listBox2);
+            this.groupBox22.Controls.Add(this.listBoxSearchResultsState);
             this.groupBox22.Controls.Add(this.label30);
             this.groupBox22.Controls.Add(this.label31);
-            this.groupBox22.Controls.Add(this.textBox21);
-            this.groupBox22.Controls.Add(this.textBox22);
-            this.groupBox22.Controls.Add(this.textBox23);
+            this.groupBox22.Controls.Add(this.textBoxState);
+            this.groupBox22.Controls.Add(this.textBoxRatingState);
+            this.groupBox22.Controls.Add(this.textBoxReviewsState);
             this.groupBox22.ForeColor = System.Drawing.Color.White;
             this.groupBox22.Location = new System.Drawing.Point(20, 19);
             this.groupBox22.Name = "groupBox22";
@@ -1405,16 +1415,17 @@
             this.label29.TabIndex = 19;
             this.label29.Text = "# of Reviews";
             // 
-            // listBox2
+            // listBoxSearchResultsState
             // 
-            this.listBox2.BackColor = System.Drawing.Color.Silver;
-            this.listBox2.ForeColor = System.Drawing.Color.Black;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(7, 20);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(314, 290);
-            this.listBox2.TabIndex = 0;
+            this.listBoxSearchResultsState.BackColor = System.Drawing.Color.Silver;
+            this.listBoxSearchResultsState.ForeColor = System.Drawing.Color.Black;
+            this.listBoxSearchResultsState.FormattingEnabled = true;
+            this.listBoxSearchResultsState.Location = new System.Drawing.Point(7, 20);
+            this.listBoxSearchResultsState.Name = "listBoxSearchResultsState";
+            this.listBoxSearchResultsState.ScrollAlwaysVisible = true;
+            this.listBoxSearchResultsState.Size = new System.Drawing.Size(314, 290);
+            this.listBoxSearchResultsState.TabIndex = 0;
+            this.listBoxSearchResultsState.SelectedValueChanged += new System.EventHandler(this.listBoxSearchResultsState_SelectedValueChanged);
             // 
             // label30
             // 
@@ -1438,38 +1449,38 @@
             this.label31.Text = "State";
             this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox21
+            // textBoxState
             // 
-            this.textBox21.BackColor = System.Drawing.Color.Silver;
-            this.textBox21.ForeColor = System.Drawing.Color.Black;
-            this.textBox21.Location = new System.Drawing.Point(114, 335);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(192, 20);
-            this.textBox21.TabIndex = 14;
-            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxState.BackColor = System.Drawing.Color.Silver;
+            this.textBoxState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxState.Location = new System.Drawing.Point(114, 335);
+            this.textBoxState.Name = "textBoxState";
+            this.textBoxState.ReadOnly = true;
+            this.textBoxState.Size = new System.Drawing.Size(192, 20);
+            this.textBoxState.TabIndex = 14;
+            this.textBoxState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox22
+            // textBoxRatingState
             // 
-            this.textBox22.BackColor = System.Drawing.Color.Silver;
-            this.textBox22.ForeColor = System.Drawing.Color.Black;
-            this.textBox22.Location = new System.Drawing.Point(114, 366);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(192, 20);
-            this.textBox22.TabIndex = 16;
-            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxRatingState.BackColor = System.Drawing.Color.Silver;
+            this.textBoxRatingState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRatingState.Location = new System.Drawing.Point(114, 366);
+            this.textBoxRatingState.Name = "textBoxRatingState";
+            this.textBoxRatingState.ReadOnly = true;
+            this.textBoxRatingState.Size = new System.Drawing.Size(192, 20);
+            this.textBoxRatingState.TabIndex = 16;
+            this.textBoxRatingState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox23
+            // textBoxReviewsState
             // 
-            this.textBox23.BackColor = System.Drawing.Color.Silver;
-            this.textBox23.ForeColor = System.Drawing.Color.Black;
-            this.textBox23.Location = new System.Drawing.Point(114, 397);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(192, 20);
-            this.textBox23.TabIndex = 15;
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxReviewsState.BackColor = System.Drawing.Color.Silver;
+            this.textBoxReviewsState.ForeColor = System.Drawing.Color.Black;
+            this.textBoxReviewsState.Location = new System.Drawing.Point(114, 397);
+            this.textBoxReviewsState.Name = "textBoxReviewsState";
+            this.textBoxReviewsState.ReadOnly = true;
+            this.textBoxReviewsState.Size = new System.Drawing.Size(192, 20);
+            this.textBoxReviewsState.TabIndex = 15;
+            this.textBoxReviewsState.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabControl1
             // 
@@ -1517,12 +1528,207 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Business Search";
             // 
+            // groupBox30
+            // 
+            this.groupBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox30.Controls.Add(this.resultsGrid);
+            this.groupBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox30.ForeColor = System.Drawing.Color.White;
+            this.groupBox30.Location = new System.Drawing.Point(366, 113);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(747, 864);
+            this.groupBox30.TabIndex = 12;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "SEARCH RESULTS";
+            // 
+            // resultsGrid
+            // 
+            this.resultsGrid.BackgroundColor = System.Drawing.Color.Gray;
+            this.resultsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BusinessName,
+            this.City,
+            this.State,
+            this.Zipcode,
+            this.Rating,
+            this.NumReviews});
+            this.resultsGrid.GridColor = System.Drawing.Color.Silver;
+            this.resultsGrid.Location = new System.Drawing.Point(7, 20);
+            this.resultsGrid.Name = "resultsGrid";
+            this.resultsGrid.Size = new System.Drawing.Size(734, 836);
+            this.resultsGrid.TabIndex = 0;
+            // 
+            // BusinessName
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.BusinessName.HeaderText = "Business Name";
+            this.BusinessName.Name = "BusinessName";
+            this.BusinessName.Width = 180;
+            // 
+            // City
+            // 
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.Width = 110;
+            // 
+            // State
+            // 
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            // 
+            // Zipcode
+            // 
+            this.Zipcode.HeaderText = "Zipcode";
+            this.Zipcode.Name = "Zipcode";
+            // 
+            // Rating
+            // 
+            this.Rating.HeaderText = "Average Rating";
+            this.Rating.Name = "Rating";
+            // 
+            // NumReviews
+            // 
+            this.NumReviews.HeaderText = "Number of Reviews";
+            this.NumReviews.Name = "NumReviews";
+            // 
+            // groupBox29
+            // 
+            this.groupBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox29.Controls.Add(this.numericMaxReviews);
+            this.groupBox29.Controls.Add(this.numericMinReviews);
+            this.groupBox29.Controls.Add(this.numericMaxRating);
+            this.groupBox29.Controls.Add(this.numericMinRating);
+            this.groupBox29.Controls.Add(this.label38);
+            this.groupBox29.Controls.Add(this.label37);
+            this.groupBox29.Controls.Add(this.label36);
+            this.groupBox29.Controls.Add(this.label35);
+            this.groupBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox29.ForeColor = System.Drawing.Color.White;
+            this.groupBox29.Location = new System.Drawing.Point(366, 6);
+            this.groupBox29.Name = "groupBox29";
+            this.groupBox29.Size = new System.Drawing.Size(747, 100);
+            this.groupBox29.TabIndex = 11;
+            this.groupBox29.TabStop = false;
+            this.groupBox29.Text = "Select By Rating";
+            // 
+            // numericMaxReviews
+            // 
+            this.numericMaxReviews.BackColor = System.Drawing.Color.Gray;
+            this.numericMaxReviews.ForeColor = System.Drawing.Color.White;
+            this.numericMaxReviews.Location = new System.Drawing.Point(548, 66);
+            this.numericMaxReviews.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericMaxReviews.Name = "numericMaxReviews";
+            this.numericMaxReviews.Size = new System.Drawing.Size(120, 20);
+            this.numericMaxReviews.TabIndex = 9;
+            this.numericMaxReviews.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericMinReviews
+            // 
+            this.numericMinReviews.BackColor = System.Drawing.Color.Gray;
+            this.numericMinReviews.ForeColor = System.Drawing.Color.White;
+            this.numericMinReviews.Location = new System.Drawing.Point(548, 31);
+            this.numericMinReviews.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericMinReviews.Name = "numericMinReviews";
+            this.numericMinReviews.Size = new System.Drawing.Size(120, 20);
+            this.numericMinReviews.TabIndex = 8;
+            this.numericMinReviews.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericMaxRating
+            // 
+            this.numericMaxRating.BackColor = System.Drawing.Color.Gray;
+            this.numericMaxRating.ForeColor = System.Drawing.Color.White;
+            this.numericMaxRating.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericMaxRating.Location = new System.Drawing.Point(179, 66);
+            this.numericMaxRating.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericMaxRating.Name = "numericMaxRating";
+            this.numericMaxRating.Size = new System.Drawing.Size(120, 20);
+            this.numericMaxRating.TabIndex = 7;
+            this.numericMaxRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericMinRating
+            // 
+            this.numericMinRating.BackColor = System.Drawing.Color.Gray;
+            this.numericMinRating.ForeColor = System.Drawing.Color.White;
+            this.numericMinRating.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericMinRating.Location = new System.Drawing.Point(179, 31);
+            this.numericMinRating.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            65536});
+            this.numericMinRating.Name = "numericMinRating";
+            this.numericMinRating.Size = new System.Drawing.Size(120, 20);
+            this.numericMinRating.TabIndex = 6;
+            this.numericMinRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(360, 66);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(164, 16);
+            this.label38.TabIndex = 5;
+            this.label38.Text = "Maximum # of Reviews";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(360, 31);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(160, 16);
+            this.label37.TabIndex = 4;
+            this.label37.Text = "Minimum # of Reviews";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(34, 66);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(121, 16);
+            this.label36.TabIndex = 3;
+            this.label36.Text = "Maximum Rating";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(34, 31);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(117, 16);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "Minimum Rating";
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox6.Controls.Add(this.groupBox28);
             this.groupBox6.Controls.Add(this.groupBox27);
             this.groupBox6.Controls.Add(this.groupBox25);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.White;
             this.groupBox6.Location = new System.Drawing.Point(1119, 6);
             this.groupBox6.Name = "groupBox6";
@@ -1531,23 +1737,83 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Refine Your Search";
             // 
+            // groupBox28
+            // 
+            this.groupBox28.BackColor = System.Drawing.Color.Gray;
+            this.groupBox28.Controls.Add(this.button4);
+            this.groupBox28.Controls.Add(this.listBoxSelectedAttributes);
+            this.groupBox28.ForeColor = System.Drawing.Color.White;
+            this.groupBox28.Location = new System.Drawing.Point(7, 601);
+            this.groupBox28.Name = "groupBox28";
+            this.groupBox28.Size = new System.Drawing.Size(343, 362);
+            this.groupBox28.TabIndex = 10;
+            this.groupBox28.TabStop = false;
+            this.groupBox28.Text = "Selected Attributes";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Silver;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.Location = new System.Drawing.Point(12, 321);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(317, 28);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "REMOVE";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // listBoxSelectedAttributes
+            // 
+            this.listBoxSelectedAttributes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listBoxSelectedAttributes.ForeColor = System.Drawing.Color.Black;
+            this.listBoxSelectedAttributes.FormattingEnabled = true;
+            this.listBoxSelectedAttributes.Location = new System.Drawing.Point(6, 19);
+            this.listBoxSelectedAttributes.Name = "listBoxSelectedAttributes";
+            this.listBoxSelectedAttributes.ScrollAlwaysVisible = true;
+            this.listBoxSelectedAttributes.Size = new System.Drawing.Size(331, 290);
+            this.listBoxSelectedAttributes.TabIndex = 1;
+            // 
             // groupBox27
             // 
             this.groupBox27.BackColor = System.Drawing.Color.Gray;
-            this.groupBox27.Controls.Add(this.button3);
-            this.groupBox27.Controls.Add(this.comboBox2);
+            this.groupBox27.Controls.Add(this.buttonAddAttribute);
+            this.groupBox27.Controls.Add(this.boxValue);
             this.groupBox27.ForeColor = System.Drawing.Color.White;
             this.groupBox27.Location = new System.Drawing.Point(7, 499);
             this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Size = new System.Drawing.Size(346, 83);
+            this.groupBox27.Size = new System.Drawing.Size(343, 83);
             this.groupBox27.TabIndex = 9;
             this.groupBox27.TabStop = false;
             this.groupBox27.Text = "Select Value";
             // 
+            // buttonAddAttribute
+            // 
+            this.buttonAddAttribute.BackColor = System.Drawing.Color.Silver;
+            this.buttonAddAttribute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddAttribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAddAttribute.Location = new System.Drawing.Point(13, 46);
+            this.buttonAddAttribute.Name = "buttonAddAttribute";
+            this.buttonAddAttribute.Size = new System.Drawing.Size(317, 28);
+            this.buttonAddAttribute.TabIndex = 2;
+            this.buttonAddAttribute.Text = "ADD";
+            this.buttonAddAttribute.UseVisualStyleBackColor = false;
+            // 
+            // boxValue
+            // 
+            this.boxValue.BackColor = System.Drawing.Color.Gray;
+            this.boxValue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.boxValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxValue.ForeColor = System.Drawing.Color.White;
+            this.boxValue.FormattingEnabled = true;
+            this.boxValue.Location = new System.Drawing.Point(45, 19);
+            this.boxValue.Name = "boxValue";
+            this.boxValue.Size = new System.Drawing.Size(249, 21);
+            this.boxValue.TabIndex = 4;
+            // 
             // groupBox25
             // 
             this.groupBox25.BackColor = System.Drawing.Color.Gray;
-            this.groupBox25.Controls.Add(this.listBox6);
+            this.groupBox25.Controls.Add(this.listBoxAttributes);
             this.groupBox25.ForeColor = System.Drawing.Color.White;
             this.groupBox25.Location = new System.Drawing.Point(6, 31);
             this.groupBox25.Name = "groupBox25";
@@ -1556,27 +1822,28 @@
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Select Business Attribute";
             // 
-            // listBox6
+            // listBoxAttributes
             // 
-            this.listBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listBox6.ForeColor = System.Drawing.Color.Black;
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(7, 23);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.ScrollAlwaysVisible = true;
-            this.listBox6.Size = new System.Drawing.Size(331, 407);
-            this.listBox6.TabIndex = 0;
+            this.listBoxAttributes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listBoxAttributes.ForeColor = System.Drawing.Color.Black;
+            this.listBoxAttributes.FormattingEnabled = true;
+            this.listBoxAttributes.Location = new System.Drawing.Point(7, 23);
+            this.listBoxAttributes.Name = "listBoxAttributes";
+            this.listBoxAttributes.ScrollAlwaysVisible = true;
+            this.listBoxAttributes.Size = new System.Drawing.Size(331, 407);
+            this.listBoxAttributes.TabIndex = 0;
             // 
             // groupBox23
             // 
             this.groupBox23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox23.Controls.Add(this.listBox3);
-            this.groupBox23.Controls.Add(this.listBox4);
-            this.groupBox23.Controls.Add(this.comboBox1);
+            this.groupBox23.Controls.Add(this.listBoxZipSearch);
+            this.groupBox23.Controls.Add(this.listBoxCitySearch);
+            this.groupBox23.Controls.Add(this.boxStateSearch);
             this.groupBox23.Controls.Add(this.label32);
             this.groupBox23.Controls.Add(this.label33);
             this.groupBox23.Controls.Add(this.label34);
             this.groupBox23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox23.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox23.Location = new System.Drawing.Point(3, 6);
             this.groupBox23.Name = "groupBox23";
@@ -1585,42 +1852,45 @@
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Select Business Location";
             // 
-            // listBox3
+            // listBoxZipSearch
             // 
-            this.listBox3.BackColor = System.Drawing.Color.Gray;
-            this.listBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBox3.ForeColor = System.Drawing.Color.White;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(96, 314);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listBox3.ScrollAlwaysVisible = true;
-            this.listBox3.Size = new System.Drawing.Size(249, 147);
-            this.listBox3.TabIndex = 4;
+            this.listBoxZipSearch.BackColor = System.Drawing.Color.Gray;
+            this.listBoxZipSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBoxZipSearch.ForeColor = System.Drawing.Color.White;
+            this.listBoxZipSearch.FormattingEnabled = true;
+            this.listBoxZipSearch.Location = new System.Drawing.Point(96, 314);
+            this.listBoxZipSearch.Name = "listBoxZipSearch";
+            this.listBoxZipSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBoxZipSearch.ScrollAlwaysVisible = true;
+            this.listBoxZipSearch.Size = new System.Drawing.Size(249, 147);
+            this.listBoxZipSearch.TabIndex = 4;
+            this.listBoxZipSearch.SelectedValueChanged += new System.EventHandler(this.listBoxZipSearch_SelectedValueChanged);
             // 
-            // listBox4
+            // listBoxCitySearch
             // 
-            this.listBox4.BackColor = System.Drawing.Color.Gray;
-            this.listBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBox4.ForeColor = System.Drawing.Color.White;
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(96, 84);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.ScrollAlwaysVisible = true;
-            this.listBox4.Size = new System.Drawing.Size(249, 212);
-            this.listBox4.TabIndex = 2;
+            this.listBoxCitySearch.BackColor = System.Drawing.Color.Gray;
+            this.listBoxCitySearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBoxCitySearch.ForeColor = System.Drawing.Color.White;
+            this.listBoxCitySearch.FormattingEnabled = true;
+            this.listBoxCitySearch.Location = new System.Drawing.Point(96, 84);
+            this.listBoxCitySearch.Name = "listBoxCitySearch";
+            this.listBoxCitySearch.ScrollAlwaysVisible = true;
+            this.listBoxCitySearch.Size = new System.Drawing.Size(249, 212);
+            this.listBoxCitySearch.TabIndex = 2;
+            this.listBoxCitySearch.SelectedValueChanged += new System.EventHandler(this.listBoxCitySearch_SelectedValueChanged);
             // 
-            // comboBox1
+            // boxStateSearch
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Gray;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 21);
-            this.comboBox1.TabIndex = 3;
+            this.boxStateSearch.BackColor = System.Drawing.Color.Gray;
+            this.boxStateSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.boxStateSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxStateSearch.ForeColor = System.Drawing.Color.White;
+            this.boxStateSearch.FormattingEnabled = true;
+            this.boxStateSearch.Location = new System.Drawing.Point(96, 43);
+            this.boxStateSearch.Name = "boxStateSearch";
+            this.boxStateSearch.Size = new System.Drawing.Size(249, 21);
+            this.boxStateSearch.TabIndex = 3;
+            this.boxStateSearch.SelectedIndexChanged += new System.EventHandler(this.boxStateSearch_SelectedIndexChanged);
             // 
             // label32
             // 
@@ -1655,8 +1925,9 @@
             // groupBox24
             // 
             this.groupBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox24.Controls.Add(this.button1);
-            this.groupBox24.Controls.Add(this.listBox5);
+            this.groupBox24.Controls.Add(this.buttonAddSearch);
+            this.groupBox24.Controls.Add(this.listBoxCategorySearch);
+            this.groupBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox24.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox24.Location = new System.Drawing.Point(3, 495);
             this.groupBox24.Name = "groupBox24";
@@ -1665,34 +1936,36 @@
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Select Business Category";
             // 
-            // button1
+            // buttonAddSearch
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(18, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAddSearch.BackColor = System.Drawing.Color.Silver;
+            this.buttonAddSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAddSearch.Location = new System.Drawing.Point(18, 215);
+            this.buttonAddSearch.Name = "buttonAddSearch";
+            this.buttonAddSearch.Size = new System.Drawing.Size(317, 28);
+            this.buttonAddSearch.TabIndex = 1;
+            this.buttonAddSearch.Text = "ADD";
+            this.buttonAddSearch.UseVisualStyleBackColor = false;
+            this.buttonAddSearch.Click += new System.EventHandler(this.buttonAddSearch_Click);
             // 
-            // listBox5
+            // listBoxCategorySearch
             // 
-            this.listBox5.BackColor = System.Drawing.Color.Gray;
-            this.listBox5.ForeColor = System.Drawing.Color.White;
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(7, 19);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.ScrollAlwaysVisible = true;
-            this.listBox5.Size = new System.Drawing.Size(338, 186);
-            this.listBox5.TabIndex = 0;
+            this.listBoxCategorySearch.BackColor = System.Drawing.Color.Gray;
+            this.listBoxCategorySearch.ForeColor = System.Drawing.Color.White;
+            this.listBoxCategorySearch.FormattingEnabled = true;
+            this.listBoxCategorySearch.Location = new System.Drawing.Point(7, 19);
+            this.listBoxCategorySearch.Name = "listBoxCategorySearch";
+            this.listBoxCategorySearch.ScrollAlwaysVisible = true;
+            this.listBoxCategorySearch.Size = new System.Drawing.Size(338, 186);
+            this.listBoxCategorySearch.TabIndex = 0;
             // 
             // groupBox26
             // 
             this.groupBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox26.Controls.Add(this.button2);
-            this.groupBox26.Controls.Add(this.listBox7);
+            this.groupBox26.Controls.Add(this.buttonRemoveSearch);
+            this.groupBox26.Controls.Add(this.listBoxSelectedCategoriesSearch);
+            this.groupBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox26.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox26.Location = new System.Drawing.Point(3, 755);
             this.groupBox26.Name = "groupBox26";
@@ -1701,286 +1974,35 @@
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Selected Categories";
             // 
-            // button2
+            // buttonRemoveSearch
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(18, 186);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(317, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "REMOVE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonRemoveSearch.BackColor = System.Drawing.Color.Silver;
+            this.buttonRemoveSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRemoveSearch.Location = new System.Drawing.Point(18, 186);
+            this.buttonRemoveSearch.Name = "buttonRemoveSearch";
+            this.buttonRemoveSearch.Size = new System.Drawing.Size(317, 28);
+            this.buttonRemoveSearch.TabIndex = 2;
+            this.buttonRemoveSearch.Text = "REMOVE";
+            this.buttonRemoveSearch.UseVisualStyleBackColor = false;
+            this.buttonRemoveSearch.Click += new System.EventHandler(this.buttonRemoveSearch_Click);
             // 
-            // listBox7
+            // listBoxSelectedCategoriesSearch
             // 
-            this.listBox7.BackColor = System.Drawing.Color.Gray;
-            this.listBox7.ForeColor = System.Drawing.Color.White;
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.Location = new System.Drawing.Point(6, 19);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.ScrollAlwaysVisible = true;
-            this.listBox7.Size = new System.Drawing.Size(339, 160);
-            this.listBox7.TabIndex = 2;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.Gray;
-            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(45, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(249, 21);
-            this.comboBox2.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(20, 46);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(317, 28);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "ADD";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // groupBox28
-            // 
-            this.groupBox28.BackColor = System.Drawing.Color.Gray;
-            this.groupBox28.Controls.Add(this.button4);
-            this.groupBox28.Controls.Add(this.listBox8);
-            this.groupBox28.ForeColor = System.Drawing.Color.White;
-            this.groupBox28.Location = new System.Drawing.Point(7, 601);
-            this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(346, 362);
-            this.groupBox28.TabIndex = 10;
-            this.groupBox28.TabStop = false;
-            this.groupBox28.Text = "Selected Attributes";
-            // 
-            // listBox8
-            // 
-            this.listBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listBox8.ForeColor = System.Drawing.Color.Black;
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.Location = new System.Drawing.Point(6, 19);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.ScrollAlwaysVisible = true;
-            this.listBox8.Size = new System.Drawing.Size(331, 290);
-            this.listBox8.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.Location = new System.Drawing.Point(16, 321);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(317, 28);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "REMOVE";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // groupBox29
-            // 
-            this.groupBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox29.Controls.Add(this.numericUpDown4);
-            this.groupBox29.Controls.Add(this.numericUpDown3);
-            this.groupBox29.Controls.Add(this.numericUpDown2);
-            this.groupBox29.Controls.Add(this.numericUpDown1);
-            this.groupBox29.Controls.Add(this.label38);
-            this.groupBox29.Controls.Add(this.label37);
-            this.groupBox29.Controls.Add(this.label36);
-            this.groupBox29.Controls.Add(this.label35);
-            this.groupBox29.ForeColor = System.Drawing.Color.White;
-            this.groupBox29.Location = new System.Drawing.Point(366, 6);
-            this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(747, 100);
-            this.groupBox29.TabIndex = 11;
-            this.groupBox29.TabStop = false;
-            this.groupBox29.Text = "Select By Rating";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(34, 31);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(117, 16);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "Minimum Rating";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(34, 66);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(121, 16);
-            this.label36.TabIndex = 3;
-            this.label36.Text = "Maximum Rating";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(360, 31);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(160, 16);
-            this.label37.TabIndex = 4;
-            this.label37.Text = "Minimum # of Reviews";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(360, 66);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(164, 16);
-            this.label38.TabIndex = 5;
-            this.label38.Text = "Maximum # of Reviews";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.Gray;
-            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDown1.Location = new System.Drawing.Point(179, 31);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 6;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.Gray;
-            this.numericUpDown2.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(179, 66);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 7;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.BackColor = System.Drawing.Color.Gray;
-            this.numericUpDown3.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown3.Location = new System.Drawing.Point(548, 31);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 8;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.BackColor = System.Drawing.Color.Gray;
-            this.numericUpDown4.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown4.Location = new System.Drawing.Point(548, 66);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 9;
-            this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox30
-            // 
-            this.groupBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox30.Controls.Add(this.dataGridView1);
-            this.groupBox30.ForeColor = System.Drawing.Color.White;
-            this.groupBox30.Location = new System.Drawing.Point(366, 113);
-            this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(747, 864);
-            this.groupBox30.TabIndex = 12;
-            this.groupBox30.TabStop = false;
-            this.groupBox30.Text = "SEARCH RESULTS";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BusinessName,
-            this.City,
-            this.State,
-            this.Zipcode,
-            this.Rating,
-            this.NumReviews});
-            this.dataGridView1.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(734, 836);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // BusinessName
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.BusinessName.HeaderText = "Business Name";
-            this.BusinessName.Name = "BusinessName";
-            this.BusinessName.Width = 180;
-            // 
-            // City
-            // 
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            this.City.Width = 110;
-            // 
-            // State
-            // 
-            this.State.HeaderText = "State";
-            this.State.Name = "State";
-            // 
-            // Zipcode
-            // 
-            this.Zipcode.HeaderText = "Zipcode";
-            this.Zipcode.Name = "Zipcode";
-            // 
-            // Rating
-            // 
-            this.Rating.HeaderText = "Average Rating";
-            this.Rating.Name = "Rating";
-            // 
-            // NumReviews
-            // 
-            this.NumReviews.HeaderText = "Number of Reviews";
-            this.NumReviews.Name = "NumReviews";
+            this.listBoxSelectedCategoriesSearch.BackColor = System.Drawing.Color.Gray;
+            this.listBoxSelectedCategoriesSearch.ForeColor = System.Drawing.Color.White;
+            this.listBoxSelectedCategoriesSearch.FormattingEnabled = true;
+            this.listBoxSelectedCategoriesSearch.Location = new System.Drawing.Point(6, 19);
+            this.listBoxSelectedCategoriesSearch.Name = "listBoxSelectedCategoriesSearch";
+            this.listBoxSelectedCategoriesSearch.ScrollAlwaysVisible = true;
+            this.listBoxSelectedCategoriesSearch.Size = new System.Drawing.Size(339, 160);
+            this.listBoxSelectedCategoriesSearch.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1494, 1009);
             this.Controls.Add(this.tabControl1);
@@ -2026,22 +2048,22 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox30.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).EndInit();
+            this.groupBox29.ResumeLayout(false);
+            this.groupBox29.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxReviews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMinReviews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxRating)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMinRating)).EndInit();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox28.ResumeLayout(false);
             this.groupBox27.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
             this.groupBox24.ResumeLayout(false);
             this.groupBox26.ResumeLayout(false);
-            this.groupBox28.ResumeLayout(false);
-            this.groupBox29.ResumeLayout(false);
-            this.groupBox29.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            this.groupBox30.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2049,26 +2071,26 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox boxState;
+        private System.Windows.Forms.ComboBox boxStateDem;
         private System.Windows.Forms.Label labelState;
         private System.Windows.Forms.Label labelCity;
         private System.Windows.Forms.Label labelZip;
-        private System.Windows.Forms.ListBox listBoxCity;
-        private System.Windows.Forms.ListBox listBoxZip;
+        private System.Windows.Forms.ListBox listBoxCityDem;
+        private System.Windows.Forms.ListBox listBoxZipDem;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListBox listBoxCategory;
-        private System.Windows.Forms.Button buttonAddCategory;
+        private System.Windows.Forms.ListBox listBoxCategoryDem;
+        private System.Windows.Forms.Button buttonAddCategoryDem;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ListBox listBoxSelectedCategories;
-        private System.Windows.Forms.Button buttonRemoveCategory;
+        private System.Windows.Forms.ListBox listBoxSelectedCategoriesDem;
+        private System.Windows.Forms.Button buttonRemoveCategoryDem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxSearchResults;
+        private System.Windows.Forms.ListBox listBoxSearchResultsZip;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCity;
-        private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.TextBox textBoxZip;
+        private System.Windows.Forms.TextBox textBoxRatingZip;
+        private System.Windows.Forms.TextBox textBoxReviewsZip;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -2078,18 +2100,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox24City;
+        private System.Windows.Forms.TextBox textBox44City;
+        private System.Windows.Forms.TextBox textBox65City;
+        private System.Windows.Forms.TextBox textBox64City;
+        private System.Windows.Forms.TextBox textBox18City;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxAgeCity;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxIncomeCity;
+        private System.Windows.Forms.TextBox textBoxPopCity;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox14;
@@ -2100,56 +2122,56 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox24Zip;
+        private System.Windows.Forms.TextBox textBox44Zip;
+        private System.Windows.Forms.TextBox textBox65Zip;
+        private System.Windows.Forms.TextBox textBox64Zip;
+        private System.Windows.Forms.TextBox textBox18Zip;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBoxAgeZip;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBoxIncomeZip;
+        private System.Windows.Forms.TextBox textBoxPopZip;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxSearchResultsCity;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBoxRatingCity;
+        private System.Windows.Forms.TextBox textBoxReviewsCity;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBoxSearchResultsState;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBoxState;
+        private System.Windows.Forms.TextBox textBoxRatingState;
+        private System.Windows.Forms.TextBox textBoxReviewsState;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label labelPop;
         private System.Windows.Forms.Label labelIncome;
-        private System.Windows.Forms.TextBox textBoxPop;
-        private System.Windows.Forms.TextBox textBoxIncome;
+        private System.Windows.Forms.TextBox textBoxPopState;
+        private System.Windows.Forms.TextBox textBoxIncomeState;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label labelMedAge;
-        private System.Windows.Forms.TextBox textBoxAge;
+        private System.Windows.Forms.TextBox textBoxAgeState;
         private System.Windows.Forms.Label labelAge;
         private System.Windows.Forms.Label labelPercent;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox65;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox18State;
+        private System.Windows.Forms.TextBox textBox64State;
+        private System.Windows.Forms.TextBox textBox65State;
+        private System.Windows.Forms.TextBox textBox44State;
+        private System.Windows.Forms.TextBox textBox24State;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label44;
@@ -2158,38 +2180,38 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox23;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox listBoxZipSearch;
+        private System.Windows.Forms.ListBox listBoxCitySearch;
+        private System.Windows.Forms.ComboBox boxStateSearch;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.GroupBox groupBox24;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.Button buttonAddSearch;
+        private System.Windows.Forms.ListBox listBoxCategorySearch;
         private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.ListBox listBoxAttributes;
         private System.Windows.Forms.GroupBox groupBox26;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.Button buttonRemoveSearch;
+        private System.Windows.Forms.ListBox listBoxSelectedCategoriesSearch;
         private System.Windows.Forms.GroupBox groupBox27;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox boxValue;
+        private System.Windows.Forms.Button buttonAddAttribute;
         private System.Windows.Forms.GroupBox groupBox28;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ListBox listBox8;
+        private System.Windows.Forms.ListBox listBoxSelectedAttributes;
         private System.Windows.Forms.GroupBox groupBox29;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericMaxReviews;
+        private System.Windows.Forms.NumericUpDown numericMinReviews;
+        private System.Windows.Forms.NumericUpDown numericMaxRating;
+        private System.Windows.Forms.NumericUpDown numericMinRating;
         private System.Windows.Forms.GroupBox groupBox30;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView resultsGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn BusinessName;
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
