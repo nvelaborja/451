@@ -33,42 +33,9 @@ CREATE TABLE Businesses (
 );
 
 CREATE TABLE Attributes (
-	bid 		varchar(30)  PRIMARY KEY,
-	Takeout 	tinyint,
-	DriveThru 	tinyint,
-	dessert 		tinyint,
-	latenight 	tinyint,
-	lunch 	tinyint,
-	dinner	 tinyint,
-	brunch	 tinyint,
-	breakfast	 tinyint,
-	caters	 tinyint,
-	noise_level 	varchar(10),
-	takes_reservations	 tinyint,
-	delivery	 tinyint,
-	romantic	 tinyint,
-	intimate	 tinyint,
-	classy	 tinyint,
-	hipster	 tinyint,
-	divey	 tinyint,
-	touristy	 tinyint,
-	trendy	 tinyint,
-	upscale	 tinyint,
-	casual	 tinyint,
-	garage	 tinyint,
-	street	 tinyint,
-	validated	 tinyint,
-	lot	 tinyint,
-	valet	 tinyint,
-	has_tv	 tinyint,
-	outdoor_seating	 tinyint,
-	attire	 varchar(10),
-	alchohol  varchar(10),
-	waiter_service  	tinyint,
-	accept_credit  	tinyint,
-	good_for_kids  	tinyint,
-	good_for_groups 	tinyint,
-	price_range  tinyint
+	a_title		varchar(20),
+    a_value		varchar(20),
+    PRIMARY KEY(a_title, a_value)
 );
 
 CREATE TABLE Categories (

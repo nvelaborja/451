@@ -214,7 +214,11 @@ namespace Business_Analyst
                 if (listBoxSelectedCategoriesDem.SelectedItems.Count != 0)         // If there's still something there
                     businessSearch();
                 else
+                {
                     listBoxSearchResultsZip.Items.Clear();
+                    listBoxSearchResultsCity.Items.Clear();
+                    listBoxSearchResultsState.Items.Clear();
+                }
             }
         }
 
@@ -512,7 +516,7 @@ namespace Business_Analyst
             {
                 // Do state search
 
-                string qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + boxStateDem.SelectedItem.ToString() + "' AND B.bid IN ";
+                string qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) + "' AND B.bid IN ";
                 for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
                 {
                     qStr += "(SELECT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "')";
@@ -528,7 +532,7 @@ namespace Business_Analyst
                 {
                     // Do city search
 
-                    qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + boxStateDem.SelectedItem.ToString() + 
+                    qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) + 
                         "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.bid IN ";
                     for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
                     {
@@ -545,7 +549,7 @@ namespace Business_Analyst
                     {
                         // Do zip search
 
-                        qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + boxStateDem.SelectedItem.ToString() +
+                        qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) +
                             "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.zipcode='" + listBoxZipDem.SelectedItem.ToString() + "' AND B.bid IN ";
                         for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
                         {
@@ -571,7 +575,15 @@ namespace Business_Analyst
             textBoxRatingZip.Clear();
         }
 
+        private string stateToStateCode(string state)
+        {
+            string query = "SELECT DISTINCT state_code FROM Demographics WHERE state ='" + state + "';";
+            List<string> results = new List<string>();
+            results = dataBase.SQLSELECTExec(query, "state_code");
+            string state_code = results[0];
 
+            return state_code;
+        }
 
 
         #endregion
