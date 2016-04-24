@@ -151,7 +151,7 @@ namespace parse_yelp
             }
             //CREATE INSERT STATEMENTS FOR BUSINESS (bid, name, city, state_code, zip)
             sb.Append("insert into businesses (bid, name, avg_rev, num_revs, city, state_code, zipcode, open) values (" + v[0].ToString() + ", " + v[7].ToString() + ", ");
-            sb.Append(v[11].ToString() + v[4].ToString() + ", " + v[5].ToString() + ", " + v[10].ToString() + ", " + zip + ", " + open +");\r\n");
+            sb.Append(v[11].ToString() + ", "+ v[6].ToString() + ", " + v[5].ToString() + ", " + v[10].ToString() + ", " + zip + ", " + open +");\r\n");
             //CREATE insert statements for categories (name, bid)
             if (v[4].ToArray().Count() > 0)
             {
