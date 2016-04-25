@@ -79,3 +79,10 @@ CREATE TABLE Reviews (
 #	Users
 #	Reviews
 # Probably need some UPDATE and DELETE handling
+
+
+
+SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.state_code='NC' AND B.city='CHARLOTTE' AND B.zipcode='28207' AND B.avg_rev >= 0 AND B.avg_rev <= 5 AND B.num_revs >= 0 AND B.num_revs <= 1000000 AND B.bid IN (SELECT bid FROM Categories WHERE Categories.name = 'American (Traditional)') ORDER BY C.bid;
+
+SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.state_code='NC' AND B.city='CHARLOTTE' AND B.zipcode='28207' AND B.avg_rev >= 0 AND B.avg_rev <= 5 AND B.num_revs >= 0 AND B.num_revs <= 1000000 AND B.bid IN (SELECT bid FROM Categories WHERE Categories.name = 'Bakeries') ORDER BY C.bid;
+"SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.state_code='NC' AND B.city='CHARLOTTE' AND B.zipcode='28207' AND B.avg_rev >= 0 AND B.avg_rev <= 5 AND B.num_revs >= 0 AND B.num_revs <= 1000000 AND B.bid IN (SELECT bid FROM Categories WHERE Categories.name = 'American (Traditional)') ORDER BY C.bid;"

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxZipDem = new System.Windows.Forms.ListBox();
             this.listBoxCityDem = new System.Windows.Forms.ListBox();
@@ -177,6 +177,8 @@
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.buttonRemoveSearch = new System.Windows.Forms.Button();
             this.listBoxSelectedCategoriesSearch = new System.Windows.Forms.ListBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1531,6 +1533,8 @@
             // groupBox30
             // 
             this.groupBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox30.Controls.Add(this.buttonClear);
+            this.groupBox30.Controls.Add(this.buttonSearch);
             this.groupBox30.Controls.Add(this.resultsGrid);
             this.groupBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox30.ForeColor = System.Drawing.Color.White;
@@ -1555,13 +1559,13 @@
             this.resultsGrid.GridColor = System.Drawing.Color.Silver;
             this.resultsGrid.Location = new System.Drawing.Point(7, 20);
             this.resultsGrid.Name = "resultsGrid";
-            this.resultsGrid.Size = new System.Drawing.Size(734, 836);
+            this.resultsGrid.Size = new System.Drawing.Size(734, 801);
             this.resultsGrid.TabIndex = 0;
             // 
             // BusinessName
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle8;
             this.BusinessName.HeaderText = "Business Name";
             this.BusinessName.Name = "BusinessName";
             this.BusinessName.Width = 180;
@@ -1631,6 +1635,11 @@
             this.numericMaxReviews.Size = new System.Drawing.Size(120, 20);
             this.numericMaxReviews.TabIndex = 9;
             this.numericMaxReviews.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericMaxReviews.Value = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             // 
             // numericMinReviews
             // 
@@ -1666,6 +1675,11 @@
             this.numericMaxRating.Size = new System.Drawing.Size(120, 20);
             this.numericMaxRating.TabIndex = 7;
             this.numericMaxRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericMaxRating.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // numericMinRating
             // 
@@ -1797,6 +1811,7 @@
             this.buttonAddAttribute.TabIndex = 2;
             this.buttonAddAttribute.Text = "ADD";
             this.buttonAddAttribute.UseVisualStyleBackColor = false;
+            this.buttonAddAttribute.Click += new System.EventHandler(this.buttonAddAttribute_Click);
             // 
             // boxValue
             // 
@@ -1809,6 +1824,7 @@
             this.boxValue.Name = "boxValue";
             this.boxValue.Size = new System.Drawing.Size(249, 21);
             this.boxValue.TabIndex = 4;
+            this.boxValue.DropDown += new System.EventHandler(this.boxValue_DropDown);
             // 
             // groupBox25
             // 
@@ -1832,6 +1848,7 @@
             this.listBoxAttributes.ScrollAlwaysVisible = true;
             this.listBoxAttributes.Size = new System.Drawing.Size(331, 407);
             this.listBoxAttributes.TabIndex = 0;
+            this.listBoxAttributes.SelectedIndexChanged += new System.EventHandler(this.listBoxAttributes_SelectedIndexChanged);
             // 
             // groupBox23
             // 
@@ -1997,6 +2014,32 @@
             this.listBoxSelectedCategoriesSearch.ScrollAlwaysVisible = true;
             this.listBoxSelectedCategoriesSearch.Size = new System.Drawing.Size(339, 160);
             this.listBoxSelectedCategoriesSearch.TabIndex = 2;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.Silver;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonSearch.Location = new System.Drawing.Point(55, 828);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(317, 28);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "SEARCH";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.BackColor = System.Drawing.Color.Silver;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonClear.Location = new System.Drawing.Point(378, 827);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(317, 28);
+            this.buttonClear.TabIndex = 5;
+            this.buttonClear.Text = "CLEAR";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // Form1
             // 
@@ -2218,6 +2261,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Zipcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumReviews;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }
 

@@ -67,6 +67,12 @@ namespace Business_Analyst
                 listBoxCategoryDem.Items.Add(item);
                 listBoxCategorySearch.Items.Add(item);
             }
+
+            // Populate Attributes List
+            qStr = "SELECT DISTINCT name FROM Attributes";
+            qResults = dataBase.SQLSELECTExec(qStr, "name");
+            qResults.Sort();
+            listBoxAttributes.Items.AddRange(qResults.ToArray());
         }
 
         #endregion
@@ -306,6 +312,78 @@ namespace Business_Analyst
         private void listBoxZipSearch_SelectedValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            emptySearchGrid();
+
+            string query = "SELECT DISTINCT B.name FROM Businesses B, Categories C ";
+            
+            if (!allowSearch())
+            {
+                return;
+            }
+
+            query += "WHERE B.state_code='" + stateToStateCode(boxStateSearch.SelectedItem.ToString()) + "' ";
+            query += "AND B.city='" + listBoxCitySearch.SelectedItem.ToString() + "' ";
+            query += "AND B.zipcode='" + listBoxZipSearch.SelectedItem.ToString() + "' ";
+            query += "AND B.avg_rev >= " + numericMinRating.Value.ToString() + " ";
+            query += "AND B.avg_rev <= " + numericMaxRating.Value.ToString() + " ";
+            query += "AND B.num_revs >= " + numericMinReviews.Value.ToString() + " ";
+            query += "AND B.num_revs <= " + numericMaxReviews.Value.ToString() + " ";
+
+            query += "AND B.bid IN ";
+            
+            for (int i = 0; i < listBoxSelectedCategoriesSearch.Items.Count; i++)
+            {
+                query += "(SELECT bid FROM Categories WHERE Categories.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "')";
+                if (i + 1 == listBoxSelectedCategoriesSearch.Items.Count) query += " ORDER BY C.bid;";
+                else query += " AND ";
+            }
+            
+            List<string> qResults = new List<string>();
+            qResults = dataBase.SQLSELECTExec(query, "B.name");
+
+            foreach (string result in qResults)
+            {
+                resultsGrid.Rows.Add();
+                resultsGrid.Rows[resultsGrid.Rows.Count - 1].Cells[0].Value = result;
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            emptySearchGrid();
+        }
+
+        private void boxValue_DropDown(object sender, EventArgs e)
+        {
+            string query = "SELECT DISTINCT _value FROM Attributes WHERE name = '" + listBoxAttributes.SelectedItem.ToString() + "';";
+            List<string> qResults = new List<string>();
+
+            qResults = dataBase.SQLSELECTExec(query, "_value");
+
+            boxValue.Items.Clear();
+            boxValue.Items.AddRange(qResults.ToArray());
+        }
+
+        private void buttonAddAttribute_Click(object sender, EventArgs e)
+        {
+            if (boxValue.SelectedItem == null)
+            {
+                return;
+            }
+
+            if (!listBoxSelectedAttributes.Items.Contains(listBoxAttributes.SelectedItem.ToString() + "," + boxValue.SelectedItem.ToString()))
+            {
+                listBoxSelectedAttributes.Items.Add(listBoxAttributes.SelectedItem.ToString() + "," + boxValue.SelectedItem.ToString());
+            }
+        }
+
+        private void listBoxAttributes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            boxValue.Items.Clear(); 
         }
 
         #endregion
@@ -584,6 +662,26 @@ namespace Business_Analyst
 
             return state_code;
         }
+
+        private void emptySearchGrid()
+        {
+            resultsGrid.Rows.Clear();
+        }
+
+        private bool allowSearch()
+        {
+            if (boxStateSearch.SelectedItem == null) return false;
+            if (listBoxCitySearch.SelectedItem == null) return false;
+            if (listBoxZipSearch.SelectedItem == null) return false;
+            if (listBoxSelectedCategoriesSearch.Items.Count == 0) return false;
+            //if (listBoxSelectedAttributes.Items.Count == 0) return false;
+
+            return true;
+        }
+
+
+
+
 
 
         #endregion

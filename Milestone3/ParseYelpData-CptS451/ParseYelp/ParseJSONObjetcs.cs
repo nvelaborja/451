@@ -255,8 +255,8 @@ namespace parse_yelp
             string output = sb.ToString();
             char[] trimchars = {' ', ','};
             output.TrimEnd(trimchars);
-            output += v[4].ToString() + ", " + TruncateReviewText(cleanTextforSQL(v[5].ToString()));
-            output +=");\r\n";
+            output += v[4].ToString() + ", " + "\"" +  TruncateReviewText(cleanTextforSQL(v[5].ToString()) );
+            output += "\");\r\n";
             //for (int i = 0; i < keyArray.Count(); i++)
             //{
             //    //Console.Write(sb.ToString());
