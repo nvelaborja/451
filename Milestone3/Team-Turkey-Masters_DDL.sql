@@ -33,10 +33,16 @@ CREATE TABLE Businesses (
 );
 
 CREATE TABLE Attributes (
+<<<<<<< HEAD
 	bid 		varchar(30) REFERENCES Businesses(bid),
 	name 		varchar(40),
 	_value 		varchar(20),
 	PRIMARY KEY(bid, name)
+=======
+	a_title		varchar(20),
+    a_value		varchar(20),
+    PRIMARY KEY(a_title, a_value)
+>>>>>>> e9e48d452eebc4d2c4f495d5f369f13f4ccfbd4c
 );
 
 CREATE TABLE Categories (

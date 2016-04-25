@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxZipDem = new System.Windows.Forms.ListBox();
             this.listBoxCityDem = new System.Windows.Forms.ListBox();
@@ -1560,8 +1560,8 @@
             // 
             // BusinessName
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle1;
             this.BusinessName.HeaderText = "Business Name";
             this.BusinessName.Name = "BusinessName";
             this.BusinessName.Width = 180;
@@ -1616,6 +1616,11 @@
             // 
             this.numericMaxReviews.BackColor = System.Drawing.Color.Gray;
             this.numericMaxReviews.ForeColor = System.Drawing.Color.White;
+            this.numericMaxReviews.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numericMaxReviews.Location = new System.Drawing.Point(548, 66);
             this.numericMaxReviews.Maximum = new decimal(new int[] {
             1000000,
@@ -1631,6 +1636,11 @@
             // 
             this.numericMinReviews.BackColor = System.Drawing.Color.Gray;
             this.numericMinReviews.ForeColor = System.Drawing.Color.White;
+            this.numericMinReviews.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numericMinReviews.Location = new System.Drawing.Point(548, 31);
             this.numericMinReviews.Maximum = new decimal(new int[] {
             1000000,
@@ -1646,11 +1656,6 @@
             // 
             this.numericMaxRating.BackColor = System.Drawing.Color.Gray;
             this.numericMaxRating.ForeColor = System.Drawing.Color.White;
-            this.numericMaxRating.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.numericMaxRating.Location = new System.Drawing.Point(179, 66);
             this.numericMaxRating.Maximum = new decimal(new int[] {
             5,
@@ -1666,11 +1671,6 @@
             // 
             this.numericMinRating.BackColor = System.Drawing.Color.Gray;
             this.numericMinRating.ForeColor = System.Drawing.Color.White;
-            this.numericMinRating.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.numericMinRating.Location = new System.Drawing.Point(179, 31);
             this.numericMinRating.Maximum = new decimal(new int[] {
             50,
