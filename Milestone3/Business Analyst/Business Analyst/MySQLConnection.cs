@@ -66,7 +66,7 @@ namespace Business_Analyst
             string uid;
             string password;
             server = "localhost";
-            database = "Milestone2";
+            database = "Milestone3";
             uid = "root";
             password = "laBor07tha";
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

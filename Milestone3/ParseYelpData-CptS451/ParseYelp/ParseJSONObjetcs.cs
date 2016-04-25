@@ -7,7 +7,12 @@ using System.Text.RegularExpressions;
 
 namespace parse_yelp
 {
-    
+    public static class globalVar
+    {
+        public static string bid { get; set; }
+        public static bool subattribute { get; set; }
+        public static string attribute { get; set; }
+    }
     class ParseJSONObjects
     {              
         Categories category;
@@ -42,6 +47,51 @@ namespace parse_yelp
 
         
         /* Extract business information*/
+        public StringBuilder aProcess(JsonObject o, StringBuilder sb)
+        {
+            int a;
+            string[] k = o.Keys.ToArray<string>();
+            JsonValue[] v = o.Values.ToArray();
+            string temp;
+            for (int i = 0; i < k.Length; i++)
+            {
+                temp = cleanTextforSQL(v[i].ToString());
+                if (temp.StartsWith("{"))
+                {
+                    //sb.Append("insert into attributes (bid, name, _value) values (" + globalVar.bid + ", " + k[i] + ", NULL);\n");
+                    
+                    globalVar.attribute = "\"" + k[i] + "\"";
+                    globalVar.subattribute = true;
+                    sb = aProcess((JsonObject)v[i], sb);
+                    globalVar.subattribute = false;
+                }
+                else
+                {
+                    //if (temp == "true")
+                    //{ sb.Append("1, "); }
+                    //else if (temp == "false")
+                    //{ sb.Append("0, "); }
+                    //else if (int.TryParse(temp, out a))
+                    //{
+                    //    sb.Append(temp + ", ");
+                    //}
+                    sb.Append("insert into attributes (bid, name, _value) values (" + globalVar.bid + ", ");
+                    if (globalVar.subattribute == true)
+                    {
+                        sb.Append(globalVar.attribute + " ");
+                    }
+                    sb.Append("\"" + k[i] + "\"" + ", ");
+                    if (temp[0] == '"')
+                    {
+                        sb.Append(temp + ")");
+                    }
+                    else
+                    { sb.Append("\"" + temp.ToString() + "\");\r\n"); }
+
+                }
+            }
+            return sb;
+        }
         public StringBuilder rProcess(JsonObject o, StringBuilder sb)
         {
             int a;
@@ -50,7 +100,7 @@ namespace parse_yelp
             string temp;
             for (int i = 0; i < k.Length; i++)
             {
-                temp = cleanTextforSQL( v[i].ToString());
+                temp = cleanTextforSQL(v[i].ToString());
                 if (temp.StartsWith("{"))
                 {
                     sb = rProcess((JsonObject)v[i], sb);
@@ -84,6 +134,7 @@ namespace parse_yelp
             //attributes and hours are nested
             //categories and neighborhood are lists
             string bid = v[0].ToString();
+            globalVar.bid = bid;
             string zip = "";
             string address = cleanTextforSQL( v[1].ToString());
             //CREATE ZIP CODE
@@ -112,15 +163,12 @@ namespace parse_yelp
                 }
             }
             //CREATE insert statements for attributes (bid, ....)
-            sb.Append("insert into attributes (bid, takeout, drivethru, dessert, latenight, lunch, dinner, brunch, breakfast, caters, noise_level, " +
-                "takes_reservations, delivery, romantic, intimate, classy, hipster, divey, touristy, trendy, upscale, casual, garage, street, "+ 
-                "validated, lot, valet, has_tv, outdoor_seating, attire, alchohol, waiter_service, accept_credit, good_for_kids, good_for_groups, price_range)"
-                + " values (");
-            sb = rProcess((JsonObject)v[13], sb);
+              
+            sb = aProcess((JsonObject)v[13], sb);
             string s = sb.ToString();
             char[] charsToTrim = { ',', ' ' };
             s = s.TrimEnd(charsToTrim);
-            s += ");\r\n";
+            s += "\r\n";
             //for (int i = 0; i < keyArray.Count(); i++)
             //{
             //    //Console.Write(sb.ToString());
@@ -207,8 +255,8 @@ namespace parse_yelp
             string output = sb.ToString();
             char[] trimchars = {' ', ','};
             output.TrimEnd(trimchars);
-            output += v[4].ToString() + ", \"" + TruncateReviewText(cleanTextforSQL(v[5].ToString()));
-            output +="\");\r\n";
+            output += v[4].ToString() + ", " + TruncateReviewText(cleanTextforSQL(v[5].ToString()));
+            output +=");\r\n";
             //for (int i = 0; i < keyArray.Count(); i++)
             //{
             //    //Console.Write(sb.ToString());
