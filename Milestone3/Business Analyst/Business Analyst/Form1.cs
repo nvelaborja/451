@@ -318,8 +318,20 @@ namespace Business_Analyst
         {
             emptySearchGrid();
 
-            string query = "SELECT DISTINCT B.name FROM Businesses B, Categories C ";
-            
+            searchQuery("name");
+            if (resultsGrid.Rows.Count > 1) resultsGrid.Rows.RemoveAt(0);
+            searchQuery("city");
+            searchQuery("state_code");
+            searchQuery("zipcode");
+            searchQuery("avg_rev");
+            searchQuery("num_revs");
+
+        }
+
+        private void searchQuery(string columnName)
+        {
+            string query = "SELECT DISTINCT " + columnName + " FROM Businesses B ";
+
             if (!allowSearch())
             {
                 return;
@@ -327,30 +339,62 @@ namespace Business_Analyst
 
             query += "WHERE B.state_code='" + stateToStateCode(boxStateSearch.SelectedItem.ToString()) + "' ";
             query += "AND B.city='" + listBoxCitySearch.SelectedItem.ToString() + "' ";
-            query += "AND B.zipcode='" + listBoxZipSearch.SelectedItem.ToString() + "' ";
+            if (listBoxZipSearch.SelectedItem != null)
+                query += "AND B.zipcode='" + listBoxZipSearch.SelectedItem.ToString() + "' ";
             query += "AND B.avg_rev >= " + numericMinRating.Value.ToString() + " ";
             query += "AND B.avg_rev <= " + numericMaxRating.Value.ToString() + " ";
             query += "AND B.num_revs >= " + numericMinReviews.Value.ToString() + " ";
             query += "AND B.num_revs <= " + numericMaxReviews.Value.ToString() + " ";
 
             query += "AND B.bid IN ";
-            
+
             for (int i = 0; i < listBoxSelectedCategoriesSearch.Items.Count; i++)
             {
-                query += "(SELECT bid FROM Categories WHERE Categories.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "')";
-                if (i + 1 == listBoxSelectedCategoriesSearch.Items.Count) query += " ORDER BY C.bid;";
+                query += "(SELECT bid FROM Categories C WHERE C.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "' ORDER BY C.bid)";
+                if (i + 1 == listBoxSelectedCategoriesSearch.Items.Count) query += ";";
                 else query += " AND ";
             }
-            
-            List<string> qResults = new List<string>();
-            qResults = dataBase.SQLSELECTExec(query, "B.name");
 
-            foreach (string result in qResults)
+            List<string> qResults = new List<string>();
+            qResults = dataBase.SQLSELECTExec(query, columnName);
+
+            for (int i = 0; i < qResults.Count; i++)
             {
-                resultsGrid.Rows.Add();
-                resultsGrid.Rows[resultsGrid.Rows.Count - 1].Cells[0].Value = result;
+                string result = qResults[i];
+                if (columnName == "name")
+                {
+                    resultsGrid.Rows.Add();
+                    resultsGrid.Rows[resultsGrid.Rows.Count - 1].Cells[getColumnIndex(columnName)].Value = result;
+                    continue;
+                }
+                
+                resultsGrid.Rows[i].Cells[getColumnIndex(columnName)].Value = result;
+            }
+
+            return;
+        }
+
+        private int getColumnIndex(string columnName)
+        {
+            switch (columnName)
+            {
+                case "name":
+                    return 0;
+                case "city":
+                    return 1;
+                case "state_code":
+                    return 2;
+                case "zipcode":
+                    return 3;
+                case "avg_rev":
+                    return 4;
+                case "num_revs":
+                    return 5;
+                default:
+                    return -1;
             }
         }
+
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -672,7 +716,7 @@ namespace Business_Analyst
         {
             if (boxStateSearch.SelectedItem == null) return false;
             if (listBoxCitySearch.SelectedItem == null) return false;
-            if (listBoxZipSearch.SelectedItem == null) return false;
+            //if (listBoxZipSearch.SelectedItem == null) return false;
             if (listBoxSelectedCategoriesSearch.Items.Count == 0) return false;
             //if (listBoxSelectedAttributes.Items.Count == 0) return false;
 

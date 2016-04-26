@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxZipDem = new System.Windows.Forms.ListBox();
             this.listBoxCityDem = new System.Windows.Forms.ListBox();
@@ -139,13 +144,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.resultsGrid = new System.Windows.Forms.DataGridView();
-            this.BusinessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zipcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumReviews = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.numericMaxReviews = new System.Windows.Forms.NumericUpDown();
             this.numericMinReviews = new System.Windows.Forms.NumericUpDown();
@@ -177,8 +178,12 @@
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.buttonRemoveSearch = new System.Windows.Forms.Button();
             this.listBoxSelectedCategoriesSearch = new System.Windows.Forms.ListBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.BusinessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zipcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumReviews = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1545,6 +1550,32 @@
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "SEARCH RESULTS";
             // 
+            // buttonClear
+            // 
+            this.buttonClear.BackColor = System.Drawing.Color.Silver;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonClear.Location = new System.Drawing.Point(378, 827);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(317, 28);
+            this.buttonClear.TabIndex = 5;
+            this.buttonClear.Text = "CLEAR";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.Silver;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonSearch.Location = new System.Drawing.Point(55, 828);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(317, 28);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "SEARCH";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
             // resultsGrid
             // 
             this.resultsGrid.BackgroundColor = System.Drawing.Color.Gray;
@@ -1561,40 +1592,6 @@
             this.resultsGrid.Name = "resultsGrid";
             this.resultsGrid.Size = new System.Drawing.Size(734, 801);
             this.resultsGrid.TabIndex = 0;
-            // 
-            // BusinessName
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle8;
-            this.BusinessName.HeaderText = "Business Name";
-            this.BusinessName.Name = "BusinessName";
-            this.BusinessName.Width = 180;
-            // 
-            // City
-            // 
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            this.City.Width = 110;
-            // 
-            // State
-            // 
-            this.State.HeaderText = "State";
-            this.State.Name = "State";
-            // 
-            // Zipcode
-            // 
-            this.Zipcode.HeaderText = "Zipcode";
-            this.Zipcode.Name = "Zipcode";
-            // 
-            // Rating
-            // 
-            this.Rating.HeaderText = "Average Rating";
-            this.Rating.Name = "Rating";
-            // 
-            // NumReviews
-            // 
-            this.NumReviews.HeaderText = "Number of Reviews";
-            this.NumReviews.Name = "NumReviews";
             // 
             // groupBox29
             // 
@@ -2015,31 +2012,50 @@
             this.listBoxSelectedCategoriesSearch.Size = new System.Drawing.Size(339, 160);
             this.listBoxSelectedCategoriesSearch.TabIndex = 2;
             // 
-            // buttonSearch
+            // BusinessName
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Silver;
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonSearch.Location = new System.Drawing.Point(55, 828);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(317, 28);
-            this.buttonSearch.TabIndex = 4;
-            this.buttonSearch.Text = "SEARCH";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.BusinessName.HeaderText = "Business Name";
+            this.BusinessName.Name = "BusinessName";
+            this.BusinessName.Width = 180;
             // 
-            // buttonClear
+            // City
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Silver;
-            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonClear.Location = new System.Drawing.Point(378, 827);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(317, 28);
-            this.buttonClear.TabIndex = 5;
-            this.buttonClear.Text = "CLEAR";
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.City.DefaultCellStyle = dataGridViewCellStyle2;
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.Width = 110;
+            // 
+            // State
+            // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.State.DefaultCellStyle = dataGridViewCellStyle3;
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            // 
+            // Zipcode
+            // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.Zipcode.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Zipcode.HeaderText = "Zipcode";
+            this.Zipcode.Name = "Zipcode";
+            // 
+            // Rating
+            // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Rating.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Rating.HeaderText = "Average Rating";
+            this.Rating.Name = "Rating";
+            // 
+            // NumReviews
+            // 
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.NumReviews.DefaultCellStyle = dataGridViewCellStyle6;
+            this.NumReviews.HeaderText = "Number of Reviews";
+            this.NumReviews.Name = "NumReviews";
             // 
             // Form1
             // 
@@ -2255,14 +2271,14 @@
         private System.Windows.Forms.NumericUpDown numericMinRating;
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.DataGridView resultsGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BusinessName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zipcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumReviews;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumReviews;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zipcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BusinessName;
     }
 }
 
