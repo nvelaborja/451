@@ -723,6 +723,13 @@ namespace Business_Analyst
             return true;
         }
 
+        private void reviewSearch()
+        {
+            string query = "SELECT stars FROM Reviews WHERE Reviews.bid IN ( SELECT bid FROM Businesses WHERE name = '" + resultsGrid.SelectedRows[0].Cells[0].Value.ToString() + "' AND city = '" + resultsGrid.SelectedRows[0].Cells[1].Value.ToString() + "');";
+
+        }
+
+
 
 
 
@@ -730,6 +737,9 @@ namespace Business_Analyst
 
         #endregion
 
-        
+        private void resultsGrid_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
