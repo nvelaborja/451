@@ -403,6 +403,8 @@ namespace Business_Analyst
 
         private void boxValue_DropDown(object sender, EventArgs e)
         {
+            if (listBoxAttributes.SelectedItem == null) return;
+
             string query = "SELECT DISTINCT _value FROM Attributes WHERE name = '" + listBoxAttributes.SelectedItem.ToString() + "';";
             List<string> qResults = new List<string>();
 
@@ -710,6 +712,7 @@ namespace Business_Analyst
         private void emptySearchGrid()
         {
             resultsGrid.Rows.Clear();
+            reviewGrid.Rows.Clear();
         }
 
         private bool allowSearch()
@@ -725,21 +728,61 @@ namespace Business_Analyst
 
         private void reviewSearch()
         {
-            string query = "SELECT stars FROM Reviews WHERE Reviews.bid IN ( SELECT bid FROM Businesses WHERE name = '" + resultsGrid.SelectedRows[0].Cells[0].Value.ToString() + "' AND city = '" + resultsGrid.SelectedRows[0].Cells[1].Value.ToString() + "');";
+            if (resultsGrid.SelectedRows.Count == 0) return;
 
+            string name = fixString(resultsGrid.SelectedRows[0].Cells[0].Value.ToString());
+            string city = fixString(resultsGrid.SelectedRows[0].Cells[1].Value.ToString());
+
+            string query = "SELECT stars FROM Reviews WHERE Reviews.bid IN ( SELECT bid FROM Businesses WHERE name = '" + name + "' AND city = '" + city + "');";
+            List<string> results = new List<string>();
+            results = dataBase.SQLSELECTExec(query, "stars");
+
+            for (int i = 0; i < results.Count; i++)
+            {
+                reviewGrid.Rows.Add();
+            }
+            if (reviewGrid.Rows.Count > results.Count) reviewGrid.Rows.RemoveAt(0);
+
+            for (int i = 0; i < results.Count; i++)
+            {
+                string result = results[i];
+                reviewGrid.Rows[resultsGrid.Rows.Count - 1].Cells["Stars"].Value = result;
+            }
+
+            
+
+            query = "SELECT text FROM Reviews WHERE Reviews.bid IN ( SELECT bid FROM Businesses WHERE name = '" + name + "' AND city = '" + city + "');";
+            results = dataBase.SQLSELECTExec(query, "text");
+
+            for (int i = 0; i < results.Count; i++)
+            {
+                string result = results[i];
+                reviewGrid.Rows[i].Cells["Review"].Value = result;
+            }
+
+            return;
         }
 
+        private string fixString(string query)
+        {
+            for (int i = 0; i < query.Length; i++)
+            {
+                if (query[i] == '\'')
+                {
+                    query = query.Insert(i, "'");
+                    i++;
+                }
+            }
 
-
-
-
-
+            return query;
+        }
 
         #endregion
 
         private void resultsGrid_SelectionChanged(object sender, EventArgs e)
         {
-
+            reviewGrid.Rows.Clear();
+            reviewSearch();
         }
     }
 }

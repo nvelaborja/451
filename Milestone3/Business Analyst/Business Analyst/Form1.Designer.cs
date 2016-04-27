@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxZipDem = new System.Windows.Forms.ListBox();
             this.listBoxCityDem = new System.Windows.Forms.ListBox();
@@ -144,6 +145,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.reviewGrid = new System.Windows.Forms.DataGridView();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -185,8 +188,6 @@
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.buttonRemoveSearch = new System.Windows.Forms.Button();
             this.listBoxSelectedCategoriesSearch = new System.Windows.Forms.ListBox();
-            this.groupBox31 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Stars = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Review = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -213,6 +214,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).BeginInit();
             this.groupBox30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).BeginInit();
             this.groupBox29.SuspendLayout();
@@ -227,8 +230,6 @@
             this.groupBox23.SuspendLayout();
             this.groupBox24.SuspendLayout();
             this.groupBox26.SuspendLayout();
-            this.groupBox31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1543,6 +1544,32 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Business Search";
             // 
+            // groupBox31
+            // 
+            this.groupBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox31.Controls.Add(this.reviewGrid);
+            this.groupBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox31.ForeColor = System.Drawing.Color.White;
+            this.groupBox31.Location = new System.Drawing.Point(366, 653);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Size = new System.Drawing.Size(747, 322);
+            this.groupBox31.TabIndex = 13;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "Reviews";
+            // 
+            // reviewGrid
+            // 
+            this.reviewGrid.BackgroundColor = System.Drawing.Color.Gray;
+            this.reviewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reviewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Stars,
+            this.Review});
+            this.reviewGrid.Location = new System.Drawing.Point(7, 20);
+            this.reviewGrid.Name = "reviewGrid";
+            this.reviewGrid.ReadOnly = true;
+            this.reviewGrid.Size = new System.Drawing.Size(734, 296);
+            this.reviewGrid.TabIndex = 0;
+            // 
             // groupBox30
             // 
             this.groupBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -1598,54 +1625,61 @@
             this.resultsGrid.GridColor = System.Drawing.Color.Silver;
             this.resultsGrid.Location = new System.Drawing.Point(7, 20);
             this.resultsGrid.Name = "resultsGrid";
+            this.resultsGrid.ReadOnly = true;
             this.resultsGrid.Size = new System.Drawing.Size(734, 471);
             this.resultsGrid.TabIndex = 0;
             this.resultsGrid.SelectionChanged += new System.EventHandler(this.resultsGrid_SelectionChanged);
             // 
             // BusinessName
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.BusinessName.DefaultCellStyle = dataGridViewCellStyle3;
             this.BusinessName.HeaderText = "Business Name";
             this.BusinessName.Name = "BusinessName";
+            this.BusinessName.ReadOnly = true;
             this.BusinessName.Width = 180;
             // 
             // City
             // 
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.City.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.City.DefaultCellStyle = dataGridViewCellStyle4;
             this.City.HeaderText = "City";
             this.City.Name = "City";
+            this.City.ReadOnly = true;
             this.City.Width = 110;
             // 
             // State
             // 
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.State.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.State.DefaultCellStyle = dataGridViewCellStyle5;
             this.State.HeaderText = "State";
             this.State.Name = "State";
+            this.State.ReadOnly = true;
             // 
             // Zipcode
             // 
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.Zipcode.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.Zipcode.DefaultCellStyle = dataGridViewCellStyle6;
             this.Zipcode.HeaderText = "Zipcode";
             this.Zipcode.Name = "Zipcode";
+            this.Zipcode.ReadOnly = true;
             // 
             // Rating
             // 
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.Rating.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.Rating.DefaultCellStyle = dataGridViewCellStyle7;
             this.Rating.HeaderText = "Average Rating";
             this.Rating.Name = "Rating";
+            this.Rating.ReadOnly = true;
             // 
             // NumReviews
             // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.NumReviews.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.NumReviews.DefaultCellStyle = dataGridViewCellStyle8;
             this.NumReviews.HeaderText = "Number of Reviews";
             this.NumReviews.Name = "NumReviews";
+            this.NumReviews.ReadOnly = true;
             // 
             // groupBox29
             // 
@@ -2066,45 +2100,24 @@
             this.listBoxSelectedCategoriesSearch.Size = new System.Drawing.Size(339, 160);
             this.listBoxSelectedCategoriesSearch.TabIndex = 2;
             // 
-            // groupBox31
-            // 
-            this.groupBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox31.Controls.Add(this.dataGridView1);
-            this.groupBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox31.ForeColor = System.Drawing.Color.White;
-            this.groupBox31.Location = new System.Drawing.Point(366, 653);
-            this.groupBox31.Name = "groupBox31";
-            this.groupBox31.Size = new System.Drawing.Size(747, 322);
-            this.groupBox31.TabIndex = 13;
-            this.groupBox31.TabStop = false;
-            this.groupBox31.Text = "Reviews";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Stars,
-            this.Review});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(734, 296);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // Stars
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.Stars.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Stars.DefaultCellStyle = dataGridViewCellStyle1;
             this.Stars.HeaderText = "Stars";
             this.Stars.Name = "Stars";
+            this.Stars.ReadOnly = true;
             this.Stars.Width = 50;
             // 
             // Review
             // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Review.DefaultCellStyle = dataGridViewCellStyle2;
             this.Review.HeaderText = "Review";
             this.Review.Name = "Review";
-            this.Review.Width = 640;
+            this.Review.ReadOnly = true;
+            this.Review.Width = 635;
             // 
             // Form1
             // 
@@ -2156,6 +2169,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox31.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).EndInit();
             this.groupBox30.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).EndInit();
             this.groupBox29.ResumeLayout(false);
@@ -2172,8 +2187,6 @@
             this.groupBox23.PerformLayout();
             this.groupBox24.ResumeLayout(false);
             this.groupBox26.ResumeLayout(false);
-            this.groupBox31.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2331,9 +2344,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
         private System.Windows.Forms.DataGridViewTextBoxColumn BusinessName;
         private System.Windows.Forms.GroupBox groupBox31;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stars;
+        private System.Windows.Forms.DataGridView reviewGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Review;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stars;
     }
 }
 
