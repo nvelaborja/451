@@ -38,7 +38,8 @@ using MySql.Data.MySqlClient;
 
 namespace Business_Analyst
 {
-    public partial class Form1 : Form
+    public partial class 
+        Form1 : Form
     {
         #region Class Members
 
@@ -217,7 +218,7 @@ namespace Business_Analyst
             {
                 listBoxSelectedCategoriesDem.Items.Remove(listBoxSelectedCategoriesDem.SelectedItem);
                 emptyBusinessDem();
-                if (listBoxSelectedCategoriesDem.SelectedItems.Count != 0)         // If there's still something there
+                if (listBoxSelectedCategoriesDem.Items.Count != 0)         // If there's still something there
                     businessSearch();
                 else
                 {
@@ -230,17 +231,77 @@ namespace Business_Analyst
 
         private void listBoxSearchResults_SelectedValueChanged(object sender, EventArgs e)
         {
+            // Zip
 
+            // First clear text boxes
+            textBoxRatingZip.Text = "";
+            textBoxReviewsZip.Text = "";
+
+            if (listBoxSearchResultsZip.SelectedItem == null) return;
+
+            string name = fixString(listBoxSearchResultsZip.SelectedItem.ToString());
+
+            // Then perform queries
+            string query = "SELECT avg_rev FROM Businesses WHERE name ='" + name + "';";
+            List<string> results = new List<string>();
+
+            results = dataBase.SQLSELECTExec(query, "avg_rev");
+
+            textBoxRatingZip.Text = results[0];                      // Should only be one result
+
+            query = "SELECT num_revs FROM Businesses WHERE name = '" + name + "';";
+            results = dataBase.SQLSELECTExec(query, "num_revs");
+            textBoxReviewsZip.Text = results[0];
         }
         
         private void listBoxSearchResultsState_SelectedValueChanged(object sender, EventArgs e)
         {
+            // State
 
+            // First clear text boxes
+            textBoxRatingState.Text = "";
+            textBoxReviewsState.Text = "";
+
+            if (listBoxSearchResultsState.SelectedItem == null) return;
+
+            string name = fixString(listBoxSearchResultsState.SelectedItem.ToString());
+
+            // Then perform queries
+            string query = "SELECT avg_rev FROM Businesses WHERE name ='" + name + "';";
+            List<string> results = new List<string>();
+
+            results = dataBase.SQLSELECTExec(query, "avg_rev");
+
+            textBoxRatingState.Text = results[0];                      // Should only be one result
+
+            query = "SELECT num_revs FROM Businesses WHERE name = '" + name + "';";
+            results = dataBase.SQLSELECTExec(query, "num_revs");
+            textBoxReviewsState.Text = results[0];
         }
 
         private void listBoxSearchResultsCity_SelectedValueChanged(object sender, EventArgs e)
         {
+            // City
 
+            // First clear text boxes
+            textBoxRatingCity.Text = "";
+            textBoxReviewsCity.Text = "";
+
+            if (listBoxSearchResultsCity.SelectedItem == null) return;
+
+            string name = fixString(listBoxSearchResultsCity.SelectedItem.ToString());
+
+            // Then perform queries
+            string query = "SELECT avg_rev FROM Businesses WHERE name ='" + name + "';";
+            List<string> results = new List<string>();
+
+            results = dataBase.SQLSELECTExec(query, "avg_rev");
+
+            textBoxRatingCity.Text = results[0];                      // Should only be one result
+
+            query = "SELECT num_revs FROM Businesses WHERE name = '" + name + "';";
+            results = dataBase.SQLSELECTExec(query, "num_revs");
+            textBoxReviewsCity.Text = results[0];
         }
 
         // Business Search Events
@@ -319,24 +380,29 @@ namespace Business_Analyst
             emptySearchGrid();
 
             searchQuery("name");
-            if (resultsGrid.Rows.Count > 1) resultsGrid.Rows.RemoveAt(0);
-            searchQuery("city");
             searchQuery("state_code");
+            searchQuery("city");
             searchQuery("zipcode");
             searchQuery("avg_rev");
             searchQuery("num_revs");
+            // Do other queries based off of the name column
 
         }
 
         private void searchQuery(string columnName)
         {
-            string query = "SELECT DISTINCT " + columnName + " FROM Businesses B ";
+            string query = "SELECT " + columnName + " FROM Businesses B ";
+
+            string qStr = "";
+            List<string> qResults = new List<string>();
+            int tempIndex = 0;
 
             if (!allowSearch())
             {
                 return;
             }
-
+        
+            
             query += "WHERE B.state_code='" + stateToStateCode(boxStateSearch.SelectedItem.ToString()) + "' ";
             query += "AND B.city='" + listBoxCitySearch.SelectedItem.ToString() + "' ";
             if (listBoxZipSearch.SelectedItem != null)
@@ -350,23 +416,71 @@ namespace Business_Analyst
 
             for (int i = 0; i < listBoxSelectedCategoriesSearch.Items.Count; i++)
             {
-                query += "(SELECT bid FROM Categories C WHERE C.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "' ORDER BY C.bid)";
-                if (i + 1 == listBoxSelectedCategoriesSearch.Items.Count) query += ";";
-                else query += " AND ";
+                query += "(SELECT bid FROM Categories C WHERE C.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "' GROUP BY C.bid)";
+                if (i + 1 == listBoxSelectedCategoriesSearch.Items.Count && listBoxSelectedAttributes.Items.Count == 0) query += ";";
+                else if (i + 1 != listBoxSelectedCategoriesSearch.Items.Count) query += " AND ";
             }
 
-            List<string> qResults = new List<string>();
+            if (listBoxSelectedAttributes.Items.Count > 0)
+            {
+                query += "AND B.bid IN ";
+
+                for (int i = 0; i < listBoxSelectedAttributes.Items.Count; i++)
+                {
+                    string[] attributes = parseAttribute(listBoxSelectedAttributes.Items[i].ToString());
+                    query += "(SELECT bid FROM Attributes A WHERE A.name = '" + attributes[0] + "' AND A._value = '" + attributes[1] + "' GROUP BY A.bid)";
+                    if (i + 1 == listBoxSelectedAttributes.Items.Count) query += ";";
+                    else query += " AND ";
+                }
+            }
+            
             qResults = dataBase.SQLSELECTExec(query, columnName);
+            listBoxSearchResultsZip.Items.AddRange(qResults.ToArray());
+            
+            /*
+            string state = boxStateSearch.SelectedItem.ToString();
+            string city = listBoxCitySearch.SelectedItem.ToString();
+            string zipcode = listBoxZipSearch.SelectedItem.ToString();
+
+            qStr = "SELECT DISTINCT temp1.name FROM (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + state + "' AND B.city ='" + city + "' AND B.zipcode = '" + zipcode + "' AND C.name = '" + listBoxSelectedCategoriesSearch.Items[0] + "') AS temp1 ";
+
+            for (int i = 1; i < listBoxSelectedCategoriesSearch.Items.Count; i++)
+            {
+                tempIndex = i + 1;
+                qStr += "INNER JOIN (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code ='" + state + "' AND B.city ='" + city + "' AND B.zipcode = '" + zipcode + "' AND C.name = '" + listBoxSelectedCategoriesSearch.Items[i] + "') AS temp" + tempIndex.ToString() + " ";
+            }
+
+            tempIndex = listBoxSelectedCategoriesSearch.Items.Count + 1;
+            for (int i = 0; i < listBoxSelectedAttributes.Items.Count; i++)
+            {
+                string[] attributes = parseAttribute(listBoxSelectedAttributes.Items[i].ToString());
+                qStr += "INNER JOIN (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Attributes A WHERE B.bid = A.bid AND A.name = '" + attributes[0] + "' AND A._value = '" + attributes[1] + "') AS temp" + (tempIndex + i).ToString() + " ";
+            }
+
+            qStr += "ON ";
+
+            for (int i = 0; i < listBoxSelectedCategoriesSearch.Items.Count + listBoxSelectedAttributes.Items.Count - 1; i++)
+            {
+                qStr += "temp" + (i + 1).ToString() + ".name=" + "temp" + (i + 2).ToString() + ".name ";
+                if (i == listBoxSelectedCategoriesSearch.Items.Count + listBoxSelectedAttributes.Items.Count - 2) qStr += ";";
+                else qStr += "AND ";
+            }
+
+            qResults = dataBase.SQLSELECTExec(qStr, "name");
+            qResults.Sort();
+            */
+
+
+
+
+            while (resultsGrid.Rows.Count < qResults.Count)
+            {
+                resultsGrid.Rows.Add();
+            }
 
             for (int i = 0; i < qResults.Count; i++)
             {
                 string result = qResults[i];
-                if (columnName == "name")
-                {
-                    resultsGrid.Rows.Add();
-                    resultsGrid.Rows[resultsGrid.Rows.Count - 1].Cells[getColumnIndex(columnName)].Value = result;
-                    continue;
-                }
                 
                 resultsGrid.Rows[i].Cells[getColumnIndex(columnName)].Value = result;
             }
@@ -639,52 +753,140 @@ namespace Business_Analyst
             if (boxStateDem.SelectedItem != null)
             {
                 // Do state search
-
-                string qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) + "' AND B.bid IN ";
-                for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
+                if (listBoxSelectedCategoriesDem.Items.Count < 2)
                 {
-                    qStr += "(SELECT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "')";
-                    if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += " ORDER BY C.bid;";
-                    else qStr += " AND ";
-                }
-                List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
-                qResults = dataBase.SQLSELECTExec(qStr, "name");
-
-                listBoxSearchResultsState.Items.AddRange(qResults.ToArray());
-
-                if (listBoxCityDem.SelectedItem != null)
-                {
-                    // Do city search
-
-                    qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) + 
-                        "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.bid IN ";
+                    string qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) + "' AND B.bid IN ";
                     for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
                     {
-                        qStr += "(SELECT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "')";
-                        if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += " ORDER BY C.bid;";
+                        qStr += "(SELECT DISTINCT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "' GROUP BY C.bid)";
+                        if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += ";";
                         else qStr += " AND ";
                     }
-                    qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
+                    List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
                     qResults = dataBase.SQLSELECTExec(qStr, "name");
+                    qResults.Sort();
 
-                    listBoxSearchResultsCity.Items.AddRange(qResults.ToArray());
+                    listBoxSearchResultsState.Items.AddRange(qResults.ToArray());
 
-                    if (listBoxZipDem.SelectedItem != null)
+                    if (listBoxCityDem.SelectedItem != null)
                     {
-                        // Do zip search
+                        // Do city search
 
                         qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) +
-                            "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.zipcode='" + listBoxZipDem.SelectedItem.ToString() + "' AND B.bid IN ";
+                            "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.bid IN ";
                         for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
                         {
-                            qStr += "(SELECT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "')";
-                            if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += " ORDER BY C.bid;";
+                            qStr += "(SELECT DISTINCT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "' GROUP BY C.bid)";
+                            if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += ";";
                             else qStr += " AND ";
                         }
                         qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
                         qResults = dataBase.SQLSELECTExec(qStr, "name");
+                        qResults.Sort();
 
-                        listBoxSearchResultsZip.Items.AddRange(qResults.ToArray());
+                        listBoxSearchResultsCity.Items.AddRange(qResults.ToArray());
+
+                        if (listBoxZipDem.SelectedItem != null)
+                        {
+                            // Do zip search
+
+                            qStr = "SELECT DISTINCT B.name FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + stateToStateCode(boxStateDem.SelectedItem.ToString()) +
+                                "' AND B.city ='" + listBoxCityDem.SelectedItem.ToString() + "' AND B.zipcode='" + listBoxZipDem.SelectedItem.ToString() + "' AND B.bid IN ";
+                            for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count; i++)
+                            {
+                                qStr += "(SELECT DISTINCT bid FROM Categories WHERE name = '" + listBoxSelectedCategoriesDem.Items[i] + "' GROUP BY C.bid)";
+                                if (i + 1 == listBoxSelectedCategoriesDem.Items.Count) qStr += ";";
+                                else qStr += " AND ";
+                            }
+                            qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
+                            qResults = dataBase.SQLSELECTExec(qStr, "name");
+                            qResults.Sort();
+
+                            listBoxSearchResultsZip.Items.AddRange(qResults.ToArray());
+                        }
+                    }
+                }
+
+                if (listBoxSelectedCategoriesDem.Items.Count > 1)
+                {
+                    string state = stateToStateCode(boxStateDem.SelectedItem.ToString());
+
+                    string qStr = "SELECT DISTINCT temp1.name FROM (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + state + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[0] + "') AS temp1 ";
+
+                    for (int i = 1; i < listBoxSelectedCategoriesDem.Items.Count; i++)
+                    {
+                        qStr += "INNER JOIN (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code ='" + state + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[i] + "') AS temp" + (i + 1).ToString() + " ";
+                    }
+
+                    qStr += "ON ";
+
+                    for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count - 1; i++)
+                    {
+                        qStr += "temp" + (i + 1).ToString() + ".name=" + "temp" + (i + 2).ToString() + ".name ";
+                        if (i == listBoxSelectedCategoriesDem.Items.Count - 2) qStr += ";";
+                        else qStr += "AND ";
+                    }
+
+                    List<string> qResults = new List<string>();                 // Query must return list, even if we know there will only be one item
+                    qResults = dataBase.SQLSELECTExec(qStr, "name");
+                    qResults.Sort();
+
+                    listBoxSearchResultsState.Items.AddRange(qResults.ToArray());
+
+                    if (listBoxCityDem.SelectedItem != null)
+                    {
+                        // Do city search
+                        
+                        string city = listBoxCityDem.SelectedItem.ToString();
+
+                        qStr = "SELECT DISTINCT temp1.name FROM (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + state + "' AND B.city ='" + city + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[0] + "') AS temp1 ";
+
+                        for (int i = 1; i < listBoxSelectedCategoriesDem.Items.Count; i++)
+                        {
+                            qStr += "INNER JOIN (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code ='" + state + "' AND B.city ='" + city + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[i] + "') AS temp" + (i + 1).ToString() + " ";
+                        }
+
+                        qStr += "ON ";
+
+                        for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count - 1; i++)
+                        {
+                            qStr += "temp" + (i + 1).ToString() + ".name=" + "temp" + (i + 2).ToString() + ".name ";
+                            if (i == listBoxSelectedCategoriesDem.Items.Count - 2) qStr += ";";
+                            else qStr += "AND ";
+                        }
+                        
+                        qResults = dataBase.SQLSELECTExec(qStr, "name");
+                        qResults.Sort();
+
+                        listBoxSearchResultsCity.Items.AddRange(qResults.ToArray());
+
+                        if (listBoxZipDem.SelectedItem != null)
+                        {
+                            // Do zip search
+
+                            string zipcode = listBoxZipDem.SelectedItem.ToString();
+
+                            qStr = "SELECT DISTINCT temp1.name FROM (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code='" + state + "' AND B.city ='" + city + "' AND B.zipcode = '" + zipcode + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[0] + "') AS temp1 ";
+
+                            for (int i = 1; i < listBoxSelectedCategoriesDem.Items.Count; i++)
+                            {
+                                qStr += "INNER JOIN (SELECT DISTINCT B.name, B.bid AS B1 FROM Businesses B, Categories C WHERE B.bid = C.bid AND B.state_code ='" + state + "' AND B.city ='" + city + "' AND B.zipcode = '" + zipcode + "' AND C.name = '" + listBoxSelectedCategoriesDem.Items[i] + "') AS temp" + (i + 1).ToString() + " ";
+                            }
+
+                            qStr += "ON ";
+
+                            for (int i = 0; i < listBoxSelectedCategoriesDem.Items.Count - 1; i++)
+                            {
+                                qStr += "temp" + (i + 1).ToString() + ".name=" + "temp" + (i + 2).ToString() + ".name ";
+                                if (i == listBoxSelectedCategoriesDem.Items.Count - 2) qStr += ";";
+                                else qStr += "AND ";
+                            }
+                            
+                            qResults = dataBase.SQLSELECTExec(qStr, "name");
+                            qResults.Sort();
+
+                            listBoxSearchResultsZip.Items.AddRange(qResults.ToArray());
+                        }
                     }
                 }
             }
@@ -719,7 +921,7 @@ namespace Business_Analyst
         {
             if (boxStateSearch.SelectedItem == null) return false;
             if (listBoxCitySearch.SelectedItem == null) return false;
-            //if (listBoxZipSearch.SelectedItem == null) return false;
+            if (listBoxZipSearch.SelectedItem == null) return false;
             if (listBoxSelectedCategoriesSearch.Items.Count == 0) return false;
             //if (listBoxSelectedAttributes.Items.Count == 0) return false;
 
@@ -737,19 +939,13 @@ namespace Business_Analyst
             List<string> results = new List<string>();
             results = dataBase.SQLSELECTExec(query, "stars");
 
-            for (int i = 0; i < results.Count; i++)
-            {
-                reviewGrid.Rows.Add();
-            }
-            if (reviewGrid.Rows.Count > results.Count) reviewGrid.Rows.RemoveAt(0);
+            while (reviewGrid.Rows.Count < results.Count) reviewGrid.Rows.Add();
 
             for (int i = 0; i < results.Count; i++)
             {
                 string result = results[i];
-                reviewGrid.Rows[resultsGrid.Rows.Count - 1].Cells["Stars"].Value = result;
+                reviewGrid.Rows[i].Cells["Stars"].Value = result;
             }
-
-            
 
             query = "SELECT text FROM Reviews WHERE Reviews.bid IN ( SELECT bid FROM Businesses WHERE name = '" + name + "' AND city = '" + city + "');";
             results = dataBase.SQLSELECTExec(query, "text");
@@ -783,6 +979,15 @@ namespace Business_Analyst
         {
             reviewGrid.Rows.Clear();
             reviewSearch();
+        }
+
+        private string[] parseAttribute(string attribute)
+        {
+            string[] attributes = new string[2];
+
+            attributes = attribute.Split(',');
+
+            return attributes;
         }
     }
 }
